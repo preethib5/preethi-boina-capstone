@@ -18,7 +18,7 @@ router.get("/bookshelf/users/", (req, res) => {
 //     .where({ id: req.params.id })
 //     .fetch({withRelated: {
 //       blogs: function(qb) {
-//         qb.select();
+//         qb.select();qb.orderBy("columnName","asc")
 //       }
 //     }})
 //     .then((users) => {
@@ -41,42 +41,48 @@ router.get("/bookshelf/users/:id", (req, res) => {
     .catch((err) => res.status(400).json({ error: err.message }));
 });
 
-//Get Current User
-router.get("/current", authorize, (req, res) => {
-  userModel
-    .where({ Id: req.decoded.Id })
-    .fetchAll()
-    .then((user) => {
-      const currentUser = { ...user.attributes, Password: null };
-      blogModel
-        .where({ User_Id: currentUser.Id })
-        .fetchAll()
-        .then((blog) => {
-          res.status(200).json(currentUser, blog);
+router.post("/", (req, res) => {
+  const { password } = req.body;
+  bcrypt
+    .hash(password, 8)
+    .then((hashedPassword) => {
+      userModel.forge({ ...req.body, password: hashedPassword })
+        .save(null,{method:"insert"})
+        .then((user) => {
+          //console.log(user)
+          const token = jwt.sign(
+            { id: user.id, email: user.attributes.email },
+            process.env.JWT_SECRET,
+            { expiresIn: "24h" }
+          );
+        // console.log(token)
+          res.status(201).json({user,token} );
+        })
+         .catch((err) => {
+          res.status(500).json({ error: err.message });
         });
     })
-    .catch((err) => {
-      res.status(500).json({ error: err.message });
-    });
-});
+   
+  });
 
 //Login User
 router.post("/login", async (req, res) => {
   userModel
-    .where({ Email: req.body.Email })
+    .where({ email: req.body.email })
     .fetch()
     .then((user) => {
+      //console.log(user.attributes)
       const isMatch = bcrypt.compareSync(
-        //req.body.Password,
-        user.attributes.Password
+        req.body.password,
+        user.attributes.password
       );
       if (!isMatch) {
         return res.status(400).json({ error: "Invalid Credentials." });
       }
       const token = jwt.sign(
         {
-          Id: user.Id,
-          Email: user.attributes.Email,
+          id: user.id,
+          email: user.attributes.email,
         },
         process.env.JWT_SECRET,
         { expiresIn: "24h" }
@@ -88,53 +94,26 @@ router.post("/login", async (req, res) => {
     });
 });
 
-// //CREATE new user
-// router.post("/", (req, res) => {
-//   const { Password } = req.body;
-//   bcrypt.hash(Password, 8).then((hashedPassword) => {
-//     new userModel({ ...req.body, Password: hashedPassword })
-//       .save()
-//       .then((user) => {
-//         console.log("Hi")
-//         const token = jwt.sign(
-//           { Id: user.Id, Email: user.attributes.Email },
-//           process.env.JWT_SECRET,
-//           { expiresIn: "24h" }
-        
-//         );
-//         console.log(token)
-//         res.status(201).json({ user });
-//       })
-      
-//   })
-//   .catch((err) => {
-//     res.status(400).send({ error: err.message });
-//   });
-//   //console.log(user)
-// });
-
-router.post("/", (req, res) => {
-  const { Password } = req.body;
-  bcrypt
-    .hash(Password, 8)
-    .then((hashedPassword) => {
-      userModel.forge({ ...req.body, Password: hashedPassword })
-        .save(null,{method:"insert"})
-        .then(user=>console.log(user))
-        // .then((user) => {
-        //   console.log(user)
-        //   // const token = jwt.sign(
-        //   //   { Id: user.Id, Email: user.attributes.Email },
-        //   //   process.env.JWT_SECRET,
-        //   //   { expiresIn: "24h" }
-        //   // );
-        // //  console.log(token)
-        //   res.status(201).json(" user, token" );
-        // })
-         .catch((err) => {
-          res.status(500).json({ error: err.message });
-        });
-    })
-   
+  //Get Current User
+  router.get("/current", authorize, (req, res) => {
+    userModel
+      .where({ id: req.decoded.id })
+      .fetchAll()
+      .then((user) => {
+       // console.log(user.attributes)
+        const currentUser = { ...user.models[0].attributes, password: null };
+      //  console.log(currentUser)
+        blogModel
+          .where({ user_id: currentUser.id })
+          .fetchAll()
+          .then((blog) => {
+            res.status(200).json({currentUser, blog});
+           // console.log(currentUser)
+          });
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
   });
+
 module.exports = router;

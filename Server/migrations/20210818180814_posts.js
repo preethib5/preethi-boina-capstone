@@ -1,15 +1,15 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable("posts", function (table) {
-        table.uuid("Id").primary();
-        table.string("Title").notNullable();
-        table.string("Content").notNullable();
-        table.timestamp("CreatedDate").defaultTo(knex.fn.now());
-        table.timestamp("UpdatedDate").defaultTo(knex.fn.now());
+        table.uuid("id").primary();
+        table.string("title").notNullable();
+        table.string("content").notNullable();
+        table.timestamp("createdDate").defaultTo(knex.fn.now());
+        table.timestamp("updatedDate").defaultTo(knex.fn.now());
         //table.integer("User_Id").unsigned().notNullable();
         table
-          .uuid("Blog_Id")
-          .references("Id")
+          .uuid("blog_id")
+          .references("id")
           .inTable("blogs")
           .onUpdate("CASCADE")
           .onDelete("CASCADE");

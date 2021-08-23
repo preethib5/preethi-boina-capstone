@@ -1,38 +1,38 @@
 module.exports = [
     {
-      Id: 1,
-      Name: "Reading a Book",
-      Comment: "Book",
-      Likes: 1,
-      Post_Id:2
+      id: 1,
+      name: "Reading a Book",
+      comment: "Book",
+      likes: 1,
+      post_id:2
     },
     {
-      Id: 2,
-      Name: "Reading a Book",
-      Comment: "Book",
-      Likes: 1,
-      Post_Id:2
+      id: 2,
+      name: "Reading a Book",
+      comment: "Book",
+      likes: 1,
+      post_id:2
     },
     {
-      Id: 3,
-      Name: "Reading a Book",
-      Comment: "Book",
-      Likes: 1,
-      Post_Id:5
+      id: 3,
+      name: "Reading a Book",
+      comment: "Book",
+      likes: 1,
+      post_id:5
     },
     {
-      Id: 4,
-      Name: "Reading a Book",
-      Comment: "Book",
-      Likes: 1,
-      Post_Id:3
+      id: 4,
+      name: "Reading a Book",
+      comment: "Book",
+      likes: 1,
+      post_id:3
     },
     {
-      Id: 5,
-      Name: "Reading a Book",
-      Comment: "Book",
-      Likes: 1,
-      Post_Id:3
+      id: 5,
+      name: "Reading a Book",
+      comment: "Book",
+      likes: 1,
+      post_id:3
     },
   ];
   

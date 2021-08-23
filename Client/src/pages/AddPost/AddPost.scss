@@ -1,0 +1,61 @@
+.addpost {
+  padding-top: 50px;
+&__img{
+    margin-left: 150px;
+    width: 70vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+  &__form {
+    position: relative;
+  }
+
+
+  &__formGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(121, 119, 119);
+    cursor: pointer;
+  }
+  &__input {
+    font-size: 30px;
+    padding: 20px;
+    width: 70vw;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__input1 {
+    font-size: 20px;
+    padding: 20px;
+    width: 70vw;
+    margin-left: 11.5rem;
+  }
+
+  &__submit {
+    position: absolute;
+    font-size: 16px;
+   // bottom: 15rem;
+    left: 21rem;
+    color: white;
+    background-color: teal;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

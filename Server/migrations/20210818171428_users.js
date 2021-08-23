@@ -1,10 +1,10 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable("users", function(table){
-        table.uuid("Id").primary();
-        table.string("FirstName").notNullable();
-        table.string("LastName").notNullable();
-        table.string("Email").notNullable();
+        table.increments("id").primary();
+        table.string("firstName").notNullable();
+        table.string("lastName").notNullable();
+        table.string("email").notNullable();
     })
   
 };

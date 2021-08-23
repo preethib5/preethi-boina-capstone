@@ -8,17 +8,17 @@ function hashPassword(password){
 
 module.exports = [
   {
-    Id: 1,
-    FirstName: "Preethi",
-    LastName: "Boina",
-    Email: "pbachirbp@gmail.com",
-    Password:hashPassword("password")
+    id: 1,
+    firstName: "Preethi",
+    lastName: "Boina",
+    email: "pbachirbp@gmail.com",
+    password:hashPassword("password")
   },
   {
-    Id: 2,
-    FirstName: "P",
-    LastName: "Boina",
-    Email: "pboina@gmail.com",
-    Password:hashPassword("password")
+    id: 2,
+    firstName: "P",
+    lastName: "Boina",
+    email: "pboina@gmail.com",
+    password:hashPassword("password")
   },
 ];
