@@ -13,7 +13,6 @@ class SinglePage extends Component {
     image:""
   };
   componentDidMount() {
-    debugger
     axios
       .get(`http://localhost:8080/post/1`)
       .then((response) => {

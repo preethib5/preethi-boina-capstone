@@ -26,7 +26,6 @@ class AddPost extends Component {
       });
   };
   handleSubmit = (e) => {
-    debugger
     e.preventDefault();
     const newPost = {
       title: e.target.title.value,
