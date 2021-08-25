@@ -18,7 +18,7 @@ export default function Topbar({ Logout }) {
           <Link to={`/`} className="header__link">
             <li className="header__items">HOME</li>
           </Link>
-          <Link to={`/`} className="header__link"><li className="header__items">ABOUT</li></Link>
+          <Link to={`/blog`} className="header__link"><li className="header__items">ABOUT</li></Link>
           <li className="header__items">CONTACT</li>
           <Link to={`/addpost`} className="header__link">
             <li className="header__items">POST</li>

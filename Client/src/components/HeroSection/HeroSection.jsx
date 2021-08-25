@@ -6,7 +6,7 @@ import "../HeroSection/HeroSection.scss"
 export default function HeroSection() {
   return (
     <div className="herosection">
-      <video className="herosection__video" src={video} autoPlay loop muted />
+      {/* <video className="herosection__video" src={video} autoPlay loop muted /> */}
       <h1 className="herosection__title">Create a blog</h1>
       <p className="herosection__desc">Share your story with the world.....</p>
      <div className="herosection__buttons">

@@ -9,14 +9,18 @@ class SinglePage extends Component {
     id: "",
     postCreatedDate: "",
     postupdatedDate: "",
-    postsData:[]
+    postsData:[],
+    image:""
   };
   componentDidMount() {
+    debugger
     axios
-      .get(`http://localhost:8080/post`)
+      .get(`http://localhost:8080/post/1`)
       .then((response) => {
         this.setState({
+          postsData:response.data,
           title: response.data[0].title,
+          image: response.data[0].image,
           content: response.data[0].content,
           id: response.data[0].id,
           postCreatedDate: response.data[0].createdDate,
@@ -46,28 +50,28 @@ class SinglePage extends Component {
       });
   }
 
-
-
   render() {
     return (
       <div className="singlepage">
-        <div className="singlepage__wrapper">
+        {
+          this.state.postsData.filter((post)=>post.id ===this.state.id).map((post)=>(
+            <div className="singlepage__wrapper">
           <img
             className="singlepage__img"
-            src="https://www.lux-review.com/wp-content/uploads/2020/05/enjoy-life-1920-x-1080.jpg"
+            src={post.image}
             alt="post-img"
           />
           <h1 className="singlepage__title">
-            {this.state.title}
+            {post.title}
             <div className="singlepage__edit">
               <Link
-                to={`/editpost/${this.state.id}`}
+                to={`/editpost/${post.id}`}
                 className=" singlepage__link"
               >
                 <i className=" singlepage__icon far fa-edit"></i>
               </Link>
               <Link to={`/blog`} className=" singlepage__links">
-                <i className="singlepage__icon far fa-trash-alt" onClick={()=> {this.deletePost(this.state.id)}}></i>
+                <i className="singlepage__icon far fa-trash-alt" onClick={()=> {this.deletePost(post.id)}}></i>
               </Link>
             </div>
           </h1>
@@ -77,11 +81,13 @@ class SinglePage extends Component {
               Author:<b>Preethi</b>
             </span>
             <span className="singlepage__date">
-              {this.state.postCreatedDate}
+              {post.postCreatedDate}
             </span>
           </div>
-          <p className="singlepage__desc">{this.state.content}</p>
+          <p className="singlepage__desc">{post.content}</p>
         </div>
+          ))
+        }
       </div>
     );
   }

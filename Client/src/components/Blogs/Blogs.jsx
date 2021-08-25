@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import image1 from "../../assets/images/img-1.jpg";
 import image2 from "../../assets/images/receipe1.jpeg";
 import image3 from "../../assets/images/House1.jpg";
-// import image4 from "../../assets/images/img-4.jpg"
+import image4 from "../../assets/images/img-4.jpg"
 // import image5 from "../../assets/images/img-5.jpg"
 import "../Blogs/Blog.scss";
 import axios from "axios";
@@ -60,11 +60,11 @@ class Blogs extends Component {
         {this.state.blog.map((blo)=>(
             <div className="blogs__wrapper">
              <ul className="blogs__items">
-              <BlogItem
-                src={image1}
+              <Link to={`/blog/${blo.id}`} className="blogs__link"><BlogItem
+                src={blo.image}
                 text={blo.description}
                 label={blo.name}
-              />
+              /></Link>
             </ul>
             </div>
         ))}

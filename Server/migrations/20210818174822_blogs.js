@@ -3,6 +3,7 @@ exports.up = function (knex) {
     table.uuid("id").primary();
     table.string("description").notNullable();
     table.string("name").notNullable();
+    table.string("image").notNullable();
     //table.integer("User_Id").unsigned().notNullable();
     table
     .integer('user_id')

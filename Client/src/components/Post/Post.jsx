@@ -10,12 +10,11 @@ class Post extends Component {
     postContent: "",
     postCreatedDate: "",
     postupdatedDate: "",
-    postId:""
+    postId:"",
   };
   GetPosts = () => {
-    debugger;
     axios
-      .get(`http://localhost:8080/post/`)
+      .get(`http://localhost:8080/post/1`)
       .then((res) => {
         console.log(res.data);
         this.setState({
@@ -43,7 +42,7 @@ class Post extends Component {
           <Link to={`/post/${post.id}`} className="post__link">
             <img
               className="post__img"
-              src="https://www.lux-review.com/wp-content/uploads/2020/05/enjoy-life-1920-x-1080.jpg"
+              src={post.image}
               alt="post-img"
             />
             <div className="post__info">

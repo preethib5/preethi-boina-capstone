@@ -13,7 +13,8 @@ class AddPost extends Component {
     axios
       .post(`http://localhost:8080/post/1`, {
         title: obj.title,
-        content: obj.content
+        content: obj.content,
+        image:obj.image
       })
       .then((res) => {
         this.setState({
@@ -30,6 +31,7 @@ class AddPost extends Component {
     const newPost = {
       title: e.target.title.value,
       content: e.target.content.value,
+      image: e.target.image.value,
     };
     console.log(newPost);
     this.addPost(newPost);
@@ -48,9 +50,18 @@ class AddPost extends Component {
         <Topbar />
         <div className="addpost">
           <h1>Add Post</h1>
-            <img className="addpost__img" src="http://amolife.com/en/wp-content/uploads/2016/11/nature____________.jpg" alt="add-img"/>
+         
           <form className="addpost__form" onSubmit={this.handleSubmit}>
-            <div className="addpost__formGroup">
+          {/* <img className="addpost__img" name="image" id="image"  src="" alt="add-img"/> */}
+          <div className="addpost__formGroup">              
+                <label htmlFor="fileInput">
+                <i className="addpost__icon fas fa-plus"></i>
+                </label>
+              <input type="file" id="fileInput" style={{display:"none"}}/>
+              <input className="addpost__input" type="text" placeholder="image" name="image" id="image" autoFocus={true}/>
+            </div>
+  
+            <div className="addpost__formGroup">              
                 <label htmlFor="fileInput">
                 <i className="addpost__icon fas fa-plus"></i>
                 </label>

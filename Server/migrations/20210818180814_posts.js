@@ -4,6 +4,7 @@ exports.up = function(knex) {
         table.uuid("id").primary();
         table.string("title").notNullable();
         table.string("content").notNullable();
+        table.string("image").notNullable();
         table.timestamp("createdDate").defaultTo(knex.fn.now());
         table.timestamp("updatedDate").defaultTo(knex.fn.now());
         //table.integer("User_Id").unsigned().notNullable();

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Topbar from "../../components/TopBar/Topbar";
+import "../EditPost/EditPost.scss"
 import axios from "axios";
 class EditPost extends Component{
 
     state = {
         title: "",
         content: "",
+        image:""
       };
     componentDidMount() {
         axios
@@ -14,6 +16,7 @@ class EditPost extends Component{
             this.setState({
                 title: response.data[0].title,
                 content: response.data[0].content,
+                image:response.data[0].image,
             });
           })
           .catch((err) => {
@@ -53,30 +56,30 @@ class EditPost extends Component{
         return(
             <>
             <Topbar />
-            <div className="addpost">
+            <div className="editpost">
             <h1>Edit Post</h1>
-                <img className="addpost__img" src="http://amolife.com/en/wp-content/uploads/2016/11/nature____________.jpg" alt="add-img"/>
-              <form className="addpost__form" onSubmit={this.handleSubmit}>
-                <div className="addpost__formGroup">
+                <img className="editpost__img" src={this.state.image} alt="edit-img"/>
+              <form className="editpost__form" onSubmit={this.handleSubmit}>
+                <div className="editpost__formGroup">
                     <label htmlFor="fileInput">
-                    <i className="addpost__icon fas fa-plus"></i>
+                    <i className="editpost__icon fas fa-plus"></i>
                     </label>
                   <input type="file" id="fileInput" style={{display:"none"}}/>
-                  <input className="addpost__input" type="text" placeholder="title"
+                  <input className="editpost__input" type="text" placeholder="title"
                    name="title" id="title"
                    defaultValue={this.state.title}
                    onChange={this.handleChange}
                     autoFocus={true}/>
                 </div>
       
-                <div className="addpost__formGroup">
-                    <textarea name="content" id="content" className="addpost__input1" type="text" 
+                <div className="editpost__formGroup">
+                    <textarea name="content" id="content" className="editpost__input1" type="text" 
                      defaultValue={this.state.content}
                      onChange={this.handleChange}
                     placeholder="Tell your story...."></textarea>
                 </div>
       
-                <button  className="addpost__submit">Publish</button>
+                <button  className="editpost__submit">Publish</button>
               </form>
             
             </div>

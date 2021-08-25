@@ -6,11 +6,11 @@
   }
   &__container {
     display: flex;
-    flex-flow: column;
+    // flex-flow: column;
     align-items: center;
     max-width: 1120px;
     width: 90%;
-    margin: 0 auto;
+    // margin: 0 auto;
 
     @media screen and (min-width: 1200px){
         width: 84%;
@@ -27,5 +27,8 @@
         width: 30vw;
         display: flex;
     }
+  }
+  &__link{
+    text-decoration: none;
   }
 }
