@@ -1,5 +1,11 @@
 .addpost {
-  padding-top: 50px;
+  //padding-top: 50px;
+  height: 50vw;
+
+  &__title{
+    font-size: 50px;
+    font-weight: 800;
+  }
 &__img{
     margin-left: 150px;
     width: 70vw;
@@ -34,8 +40,8 @@
     font-size: 30px;
     padding: 20px;
     width: 70vw;
+    height: 4vw;
   }
-
   &__input:focus {
     outline: none;
   }
@@ -45,13 +51,15 @@
     padding: 20px;
     width: 70vw;
     margin-left: 11.5rem;
+    height: 13vw;
   }
 
   &__submit {
+    margin-top: 1rem;
     position: absolute;
     font-size: 16px;
    // bottom: 15rem;
-    left: 21rem;
+   right: 8rem;
     color: white;
     background-color: teal;
     padding: 10px;

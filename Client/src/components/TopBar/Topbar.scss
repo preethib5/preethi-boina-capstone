@@ -1,7 +1,7 @@
 .header {
     width: 100%;
     height: 50px;
-    background-color: rgb(199, 181, 179);
+    background-color: #242424;
     position: sticky;
     top: 0;
     display: flex;
@@ -19,7 +19,7 @@
     &__icons {
       font-size: 20px;
       margin-right: 10px;
-      color: #444;
+      color: #fff;
       cursor: pointer;
     }
     &__center {
@@ -38,6 +38,7 @@
       font-size: 18px;
       font-weight: 300;
       cursor: pointer;
+      color: #fff;
     }
     &__img {
       width: 40px;
@@ -47,7 +48,7 @@
     }
     &__searchIcon{
   font-size: 18px;
-  color:#666;
+  color:#fff;
   cursor: pointer;
   margin-left: 15px;
     }

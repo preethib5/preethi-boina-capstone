@@ -49,7 +49,7 @@ class AddPost extends Component {
       <>
         <Topbar />
         <div className="addpost">
-          <h1>Add Post</h1>
+          <h1 className="addpost__title">Add Post</h1>
          
           <form className="addpost__form" onSubmit={this.handleSubmit}>
           {/* <img className="addpost__img" name="image" id="image"  src="" alt="add-img"/> */}

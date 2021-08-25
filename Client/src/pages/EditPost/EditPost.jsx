@@ -57,7 +57,7 @@ class EditPost extends Component{
             <>
             <Topbar />
             <div className="editpost">
-            <h1>Edit Post</h1>
+            <h1 className="editpost__title">Edit Post</h1>
                 <img className="editpost__img" src={this.state.image} alt="edit-img"/>
               <form className="editpost__form" onSubmit={this.handleSubmit}>
                 <div className="editpost__formGroup">

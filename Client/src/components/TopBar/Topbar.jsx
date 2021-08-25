@@ -15,7 +15,7 @@ export default function Topbar({ Logout }) {
 
       <div className="header__center">
         <ul className="header__list">
-          <Link to={`/`} className="header__link">
+          <Link to={`/blog`} className="header__link">
             <li className="header__items">HOME</li>
           </Link>
           <Link to={`/blog`} className="header__link"><li className="header__items">ABOUT</li></Link>
@@ -24,7 +24,7 @@ export default function Topbar({ Logout }) {
             <li className="header__items">POST</li>
           </Link>
 
-         {user &&  <Link to={`/login`} className="header__link">
+         {user &&  <Link to={`/`} className="header__link">
             <li className="header__items" onClick={Logout}>
               LOGOUT
             </li>

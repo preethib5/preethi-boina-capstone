@@ -1,13 +1,13 @@
 
 .body{
-    margin-top: 60px;
-
+    // margin-top: 60px;
+  
     &__title{
         display:flex ;
         flex-direction: column;
         align-items: center;
         font-family: 'Lora', serif;
-        color:#444;
+        color:#fff;
     }
     &__title1{
         position: absolute;
@@ -15,9 +15,10 @@
         font-size: 20px;
     }
     &__title2{
-        position: absolute;
-        top: 15%;
+        // background: url('../../assets/images/img-home.jpg') no-repeat  1% 1%,url('https://www.lifewire.com/thmb/LoeFrbx1TR_NFkaoIG3m4suX98c=/1500x966/filters:fill(auto,1)/GettyImages-905508166-5c8a523fc9e77c00010c231d.jpg') no-repeat 1% 1%,linear-gradient(to bottom, rgba(255, 255, 255, 0), 40%, rgba(255, 255, 255, 1) 60%) ; 
         font-size: 100px;
+        width: 100%;
+        height: 30vw;
     }
 
     &__img{
@@ -29,3 +30,37 @@
         object-fit: cover;
     }
 }
+
+#slider{
+    overflow: hidden; 
+    margin-top: -35rem;
+
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 10s slidy infinite;
+    animation-iteration-count: 2;
+}
+
+#slider figure img{
+    width: 20%; 
+	float: left; 
+	height:100vh;
+}
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    //50% { left: -200%; }
+    // 70% { left: -200%; }
+    // 75% { left: -300%; }
+    // 95% { left: -300%; }
+    // 100% { left: -400%; }
+    }
