@@ -11,7 +11,7 @@ const postModel = require("../models/post");
 // GET /members route
 //router.get("/bookshel7f/blog", getAllData);
 
-router.get("/bookshelf/blogs/", (req, res) => {
+router.get("/", (req, res) => {
   blogModel.fetchAll().then((b) => {
     res.status(200).json(b);
   });

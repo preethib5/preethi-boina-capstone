@@ -26,12 +26,12 @@
         cursor: pointer;
     }
 
-    &__icon:first-child{
-        color: teal;
-    }
-    &__icon:last-child{
-        color: tomato;
-    }
+    // &__icon:first-child{
+    //     color: teal;
+    // }
+    // &__icon:last-child{
+    //     color: tomato;
+    // }
     &__info{
         margin-bottom: 20px;
         display: flex;
@@ -52,4 +52,11 @@
         font-size: 30px;
         font-weight: 600;
     } 
+
+    &__link{
+        color: teal;
+    }
+    &__links{
+        color: tomato;
+    }
 }
