@@ -34,7 +34,6 @@ class EditPost extends Component {
   };
 
   handleSubmit = (event) => {
-    debugger;
     event.preventDefault();
     const updatePost = {
       //must match state properties

@@ -3,6 +3,7 @@ import "../TopBar/Topbar.scss";
 import { Link } from "react-router-dom";
 
 export default function Topbar({ Logout }) {
+
   const user =true;
   return (
     <div className="header">

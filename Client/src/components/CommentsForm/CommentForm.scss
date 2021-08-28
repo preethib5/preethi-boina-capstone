@@ -1,0 +1,89 @@
+.comment-form {
+  &__section1 {
+    display: flex;
+    margin-top: -15rem;
+    margin-left: 30rem;
+  }
+  &__image {
+    margin-top: -1.5rem;
+    margin-left: 16px;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+  }
+  &__header {
+    padding-bottom: 2rem;
+    font-size: 24px;
+    font-weight: 800;
+    color: #afafaf;
+    padding-left: 1.5rem;
+  }
+  &__formGroup {
+    margin-left: 27rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -5rem;
+  }
+  &__formGroup1 {
+    margin-left: -4.5rem;
+    display: flex;
+    align-items: center;
+    margin-top: -6rem;
+    flex-direction: column;
+  }
+  &__input{
+width:20.5vw;
+  }
+  &__comment {
+    margin-left: 4.5rem;
+    line-height: 1.5rem;
+    color: #afafaf;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    bottom: 2.5rem;
+    left: 1rem;
+    &--textArea {
+      padding: 10px;
+      width: 65vw;
+      height: 100%;
+      border-radius: 5px;
+      border: 1.5px solid #e1e1e1;
+      @media only screen and (min-width: 768px) {
+        width: 440px;
+        height: 50px;
+      }
+      @media only screen and (min-width: 1024px) {
+        width: 336px;
+        height: 10vw;
+      }
+    }
+  }
+  &__btn {
+    margin-left: -4.5rem;
+    font-size: 18px;
+    border: #0095ff solid 1px;
+    border-radius: 5px;
+    background-color: #0095ff;
+    font-weight: 500;
+    color: white;
+    width: 70vw;
+    height: 50px;
+    position: relative;
+    bottom: 16px;
+    border-bottom: 1px solid #afafaf;
+    @media only screen and (min-width: 768px) {
+      width: 160px;
+      bottom: 5rem;
+      right: 2rem;
+    }
+    @media only screen and (min-width: 1024px) {
+      // width: 160px;
+      // bottom: -.5rem;
+      // right: 2rem;
+      margin-top: -1rem;
+      margin-left: 22rem
+    }
+  }
+}

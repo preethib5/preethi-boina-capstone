@@ -33,7 +33,7 @@ router.get("/bookshelf/users/:id", (req, res) => {
     .then((users) => {
       blogModel
         .where({ User_Id: req.params.id })
-        .fetchAll()
+        .fetch()
         .then((blog) => {
           res.status(200).json({ ...users.models[0].attributes, blogs: blog });
         });
@@ -116,4 +116,33 @@ router.post("/login", async (req, res) => {
       });
   });
 
+//Update User
+router.put("/current/:id",  (req, res) => {
+  userModel
+    .where({ id: req.params.id })
+    .fetch()
+    .then((user) => {
+      const updates = Object.keys(req.body);
+      updates.forEach((update) => (user.attributes[update] = req.body[update]));
+      user
+        .save(user.attributes)
+        .then((updateUser) => res.status(200).json({ updateUser }));
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+//Update User
+router.delete("/current/:id",  (req, res) => {
+  userModel
+    .where({ id: req.params.id })
+    .destroy()
+    .then((deleteUser) => {
+      res.status(200).json({ deleteUser });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
 module.exports = router;

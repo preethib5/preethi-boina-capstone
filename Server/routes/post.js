@@ -54,6 +54,9 @@ router.get("/:id", (req, res) => {
     .then((blog) => {
       postModel
         .where({ blog_id: req.params.id })
+        .query((qb)=>{
+          qb.orderBy(1,"DESC")
+      })
         .fetchAll()
         .then((post) => {
           res.json({ ...blog.attributes, posts: post });
