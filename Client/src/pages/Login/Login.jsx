@@ -23,7 +23,6 @@ class Login extends Component {
     axios
       .post(`http://localhost:8080/user/login`, this.state.formData)
       .then((res) => {
-        //console.log(res.data);
         sessionStorage.setItem("token", res.data.token);
         this.props.history.push("/blog");
       })

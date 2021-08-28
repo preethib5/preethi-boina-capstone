@@ -1,4 +1,5 @@
 .blogs {
+  // width: 385px;
   padding: 4rem;
   background: #fff;
   &__text {
@@ -6,15 +7,7 @@
   }
   &__container {
     display: flex;
-    // flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    // margin: 0 auto;
-
-    @media screen and (min-width: 1200px){
-        width: 84%;
-    }
+    flex-wrap: wrap;
   }
   &__wrapper {
       display: flex;

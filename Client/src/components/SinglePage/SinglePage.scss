@@ -1,62 +1,79 @@
-.singlepage{
-    flex: 9;
+.singlepage {
+  // display: flex;
+  // justify-content: center;
+  width: 50vw;
+  margin-left: 25rem;
+  height: 50vw;
+  &__wrapper {
+    padding: 20px;
+    padding-right: 0;
+  }
+  &__img {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  &__title {
+    text-align: center;
+    margin: 10px;
+    font-family: "Loras", serif;
+    font-size: 28px;
+  }
+  &__edit {
+    float: right;
+    font-size: 16px;
+  }
+  &__icon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  &__icon1 {
+    margin-top: 10px;
+    padding-bottom: 35px;
+    cursor: pointer;
+    margin-right: 50rem;
+    font-size: 20px;
+    white-space: nowrap;
+    color: black;
+  }
 
-    &__wrapper{
-        padding: 20px;
-        padding-right: 0;
-    }
-    &__img{
-        width: 100%;
-        height: 300px;
-        border-radius: 5px;
-        object-fit: cover;
-    }
-    &__title{
-        text-align: center;
-        margin:10px;
-        font-family: "Loras",serif;
-        font-size:28px ;
-    }
-    &__edit{
-        float: right;
-        font-size: 16px;
-    }
-    &__icon{
-        margin-left: 10px;
-        cursor: pointer;
-    }
+  // &__icon:first-child{
+  //     color: teal;
+  // }
+  // &__icon:last-child{
+  //     color: tomato;
+  // }
+  &__info {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #6f4d03;
+    font-family: "Varela Round", sans-serif;
+  }
+  &__author {
+    font-weight: 800;
+  }
 
-    // &__icon:first-child{
-    //     color: teal;
-    // }
-    // &__icon:last-child{
-    //     color: tomato;
-    // }
-    &__info{
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        font-size: 16px;
-        color: #b39656;
-        font-family: "Varela Round",sans-serif;
-    }
+  &__desc {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+  }
 
-    &__desc{
-        color: #666;
-        font-size: 18px;
-        line-height: 25px;
-    }
+  &__desc::first-letter {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+  }
 
-    &__desc::first-letter{
-        margin-left: 20px;
-        font-size: 30px;
-        font-weight: 600;
-    } 
-
-    &__link{
-        color: teal;
-    }
-    &__links{
-        color: tomato;
-    }
+  &__link {
+    color: teal;
+  }
+  &__icons {
+    color: tomato;
+    margin-left: 10px;
+    cursor: pointer;
+  }
 }

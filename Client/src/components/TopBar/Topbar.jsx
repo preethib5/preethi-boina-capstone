@@ -20,9 +20,9 @@ export default function Topbar({ Logout }) {
           </Link>
           <Link to={`/blog`} className="header__link"><li className="header__items">ABOUT</li></Link>
           <li className="header__items">CONTACT</li>
-          <Link to={`/addpost`} className="header__link">
+          {/* <Link to={`/addpost/${this.props.match.params.id}`} className="header__link">
             <li className="header__items">POST</li>
-          </Link>
+          </Link> */}
 
          {user &&  <Link to={`/`} className="header__link">
             <li className="header__items" onClick={Logout}>

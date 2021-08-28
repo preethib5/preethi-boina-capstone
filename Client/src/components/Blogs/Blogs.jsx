@@ -12,62 +12,57 @@ import axios from "axios";
 class Blogs extends Component {
   state = {
     blog: [],
-    blogName: "",
-    blogDescription: "",
-    blogId: "",
-    blogDetails:null
+    blogDetails:null,
+    blogId:""
   };
 
-  GetBlogs = () => {
+  getBlogs = () => {
     axios
-      .get(`http://localhost:8080/blog/`)
+      .get(`http://localhost:8080/blog`)
       .then((res) => {
-        console.log(res.data);
         this.setState({
           blog: res.data,
-        //  blogName: res.data.map((blog) => blog.name),
-       //   blogDescription: res.data.map((blog) => blog.description),
-          blogId: res.data[0].id,
         });
+        return res.data[0].id
       })
+      //  .then((res)=>{
+      //   axios
+      //   .get(`http://localhost:8080/post/posts/${res}`)
+      //   .then((res) => {
+      //     console.log(res.data.posts);
+      //     this.setState({
+      //       blogDetails: res.data
+      //     });
+      //   })
+      // })
       .catch((err) => {
         console.log(err);
       });
 
-    axios
-      .get(`http://localhost:8080/blog/1`)
-      .then((res) => {
-          console.log(res.data)
-        this.setState({
-            blogDetails: res.data,
-            blogDescription:res.data.blogs.map((blog) => blog.description),
-            blogName: res.data.blogs.map((blog) => blog.name),
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
   };
   componentDidMount() {
-    this.GetBlogs();
+    this.getBlogs();
   }
   render() {
-    // console.log(this.state.blogDescription[0])
     return (
       <div className="blogs">
         <h1 className="blogs__text">Check out these EPIC Templates!!!</h1>
         <div className="blogs__container">
-        {this.state.blog.map((blo)=>(
+        {this.state.blog && (
+          this.state.blog.map((blog)=>(
             <div className="blogs__wrapper">
              <ul className="blogs__items">
-              <Link to={`/blog/${blo.id}`} className="blogs__link"><BlogItem
-                src={blo.image}
-                text={blo.description}
-                label={blo.name}
-              /></Link>
+                <BlogItem
+               image={blog.image}
+               description={blog.description}
+               name={blog.name}
+               id={blog.id}
+              />
             </ul>
             </div>
-        ))}
+         ))
+        )} 
         </div>
       </div>
     );

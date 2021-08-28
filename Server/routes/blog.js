@@ -27,33 +27,55 @@ router.get("/", (req, res) => {
 //   }).catch((e) => {res.json(e.message)});
 // });
 
-// router.get("/bookshelf/blogs/:id", (req, res) => {
-//   blogModel.where({id: req.params.id})
-//     .fetchAll()
+// router.get("/:id", (req, res) => {
+//   blogModel
+//     .where({ id: req.params.id })
+//     .fetch()
 //     .then((blog) => {
-//       postModel.where({Blog_Id: req.params.id}).fetchAll().then((post) => {
-//         res.json({...blog.models[0].attributes, "posts": post})
-//       })
-//     }).catch((e) => {res.json(e.message)});
-//   });
-
+//       postModel
+//         .where({ blog_id: req.params.id })
+//         .fetchAll()
+//         .then((post) => {
+//           res.json({ ...blog.attributes, posts: post });
+//         });
+//     })
+//     .catch((e) => {
+//       res.json(e.message);
+//     });
+// });
 router.get("/:id", (req, res) => {
-  userModel
-   // .where({ id: req.params.id })
+  postModel
+    .where({  blog_id: req.params.id })
     .fetchAll()
-    .then((user) => {
+    .then((post) => {
       blogModel
-        .where({ User_Id: req.params.id })
+        .where({id: req.params.id })
         .fetchAll()
         .then((blog) => {
-          postModel
-          .where({ Blog_Id: req.params.id })
-          .fetchAll()
-          .then((post)=>{
-            res.json({...user.models[0].attributes,"blogs": blog,"posts": post})
-          })
+          res.json({ ...blog.models[0].attributes, posts: post });
         });
+    })
+    .catch((e) => {
+      res.json(e.message);
     });
 });
+// router.get("/:id", (req, res) => {
+//   userModel
+//    // .where({ id: req.params.id })
+//     .fetchAll()
+//     .then((user) => {
+//       blogModel
+//         .where({ user_id: req.params.id })
+//         .fetchAll()
+//         .then((blog) => {
+//           postModel
+//           .where({ blog_id: req.params.id })
+//           .fetchAll()
+//           .then((post)=>{
+//             res.json({...user.models[0].attributes,"blogs": blog,"posts": post})
+//           })
+//         });
+//     });
+// });
 
 module.exports = router;

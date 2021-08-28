@@ -18,7 +18,6 @@ class SignUp extends React.Component {
     axios
       .post("http://localhost:8080/user/", this.state.formData)
       .then((res) => {
-        console.log(res.data);
         sessionStorage.setItem("token", res.data.token);
         this.props.history.push("/");
       })
@@ -39,19 +38,19 @@ class SignUp extends React.Component {
             </legend>
             <ul className="user-info__list">
               <li className="user-info__item1">
-              <label className="user-info__name">First Name:</label>
+              <label className="user-info__name">First Name:</label><span className="required-field">*</span>
             <input  className="user-info__input" type="text" name="firstName" onChange={this.handleChange} />
               </li>
               <li className="user-info__item2">
-              <label className="user-info__name">Last Name:</label>
+              <label className="user-info__name">Last Name:</label><span className="required-field">*</span>
             <input className="user-info__input" type="text" name="lastName" onChange={this.handleChange} />
               </li>
               <li className="user-info__item3">
-              <label className="user-info__name">Email:</label>
+              <label className="user-info__name">Email:</label><span className="required-field">*</span>
             <input className="user-info__input" type="email" name="email" onChange={this.handleChange} />
               </li>
               <li className="user-info__item4">
-              <label className="user-info__name">Password:</label>
+              <label className="user-info__name">Password:</label><span className="required-field">*</span>
             <input
             className="user-info__input" 
               type="password"

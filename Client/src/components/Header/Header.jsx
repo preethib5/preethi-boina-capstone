@@ -21,6 +21,7 @@ export default function Header({ Logout }) {
             alt="body-image"
           />
           <img className="body__img" src={Image2} alt="body-image2" />
+          <img className="body__img" src={Image2} alt="body-image2" />
         </figure>
       </div>
       </div>

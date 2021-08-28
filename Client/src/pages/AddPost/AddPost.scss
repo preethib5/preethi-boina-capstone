@@ -24,6 +24,13 @@
     margin-left: 150px;
     display: flex;
     align-items: center;
+   // margin-top: -5rem;
+  }
+  &__formGroup1{
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+    margin-top: -5rem;
   }
   &__icon {
     width: 25px;
@@ -37,7 +44,7 @@
     cursor: pointer;
   }
   &__input {
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px;
     width: 70vw;
     height: 4vw;
@@ -50,10 +57,17 @@
     font-size: 20px;
     padding: 20px;
     width: 70vw;
+    margin-top: 3rem;
     margin-left: 11.5rem;
     height: 13vw;
   }
-
+  &__input2{
+    font-size: 20px;
+    padding: 20px;
+    width: 70vw;
+    height: 50px;
+    margin-left: 11.5rem;
+  }
   &__submit {
     margin-top: 1rem;
     position: absolute;

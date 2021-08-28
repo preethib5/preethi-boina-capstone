@@ -1,9 +1,16 @@
 .editpost {
   // padding-top: 50px;
   height: 50vw;
+
+  &__flex{
+    display: flex;
+align-items: center;
+justify-content: center;
+  }
   &__title{
     font-size: 50px;
     font-weight: 800;
+    margin-right: 20rem;
   }
   &__img {
     margin-left: 190px;
@@ -34,6 +41,15 @@
     color: rgb(121, 119, 119);
     cursor: pointer;
   }
+  &__icon1{
+   // margin-top: 10px;
+    //padding-bottom: 35px;
+    cursor: pointer;
+    margin-right: 20rem;
+    font-size: 20px;
+    white-space: nowrap;
+    color: black;
+  }
   &__input {
     font-size: 30px;
     padding: 20px;
@@ -49,8 +65,17 @@
     font-size: 20px;
     padding: 20px;
     width: 70vw;
+    margin-top: 3rem;
     margin-left: 11.5rem;
     height: 13vw;
+  }
+  
+  &__input2 {
+    font-size: 20px;
+    padding: 20px;
+    width: 70vw;
+    height: 50px;
+    margin-left: 11.5rem;
   }
 
   &__submit {

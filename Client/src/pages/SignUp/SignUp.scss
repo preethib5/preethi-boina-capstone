@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(-45deg, #eedc52, #843ee8, #12d8c4, #32d523);
+  //background: linear-gradient(-45deg, #eedc52, #843ee8, #12d8c4, #32d523);
   background-size: 400% 400%;
   animation: Gradient 10s ease infinite;
   box-sizing: border-box;
@@ -47,4 +47,8 @@
       margin: 2rem 1rem 0 15rem;
     }
   }
+}
+.required-field {
+  content: "*";
+  color: red;
 }
