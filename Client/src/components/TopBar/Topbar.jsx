@@ -37,7 +37,7 @@ export default function Topbar({ Logout }) {
         <img
           className="header__img"
           src="https://www.hdnicewallpapers.com/Walls/Big/Rainbow/Rainbow_on_Mountain_HD_Image.jpg"
-          alt="profile-image"
+          alt=""
         />
         </Link>):(
           <>

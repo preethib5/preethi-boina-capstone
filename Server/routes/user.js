@@ -12,20 +12,6 @@ router.get("/bookshelf/users/", (req, res) => {
   });
 });
 
-// router.get("/bookshelf/users/:id", (req, res) => {
-//   console.log(1)
-//   userModel
-//     .where({ id: req.params.id })
-//     .fetch({withRelated: {
-//       blogs: function(qb) {
-//         qb.select();qb.orderBy("columnName","asc")
-//       }
-//     }})
-//     .then((users) => {
-//       res.status(200).json(users);
-//     }).catch(err => res.status(400).json({error: err.message}));
-// });
-
 router.get("/bookshelf/users/:id", (req, res) => {
   userModel
     .where({ id: req.params.id })
@@ -49,13 +35,11 @@ router.post("/", (req, res) => {
       userModel.forge({ ...req.body, password: hashedPassword })
         .save(null,{method:"insert"})
         .then((user) => {
-          //console.log(user)
           const token = jwt.sign(
             { id: user.id, email: user.attributes.email },
             process.env.JWT_SECRET,
             { expiresIn: "24h" }
           );
-        // console.log(token)
           res.status(201).json({user,token} );
         })
          .catch((err) => {
@@ -71,7 +55,6 @@ router.post("/login", async (req, res) => {
     .where({ email: req.body.email })
     .fetch()
     .then((user) => {
-      //console.log(user.attributes)
       const isMatch = bcrypt.compareSync(
         req.body.password,
         user.attributes.password
@@ -100,15 +83,12 @@ router.post("/login", async (req, res) => {
       .where({ id: req.decoded.id })
       .fetchAll()
       .then((user) => {
-       // console.log(user.attributes)
         const currentUser = { ...user.models[0].attributes, password: null };
-      //  console.log(currentUser)
         blogModel
           .where({ user_id: currentUser.id })
           .fetchAll()
           .then((blog) => {
             res.status(200).json({currentUser, blog});
-           // console.log(currentUser)
           });
       })
       .catch((err) => {

@@ -19,7 +19,6 @@ class SinglePage extends Component {
         `http://localhost:8080/comment/${this.props.match.params.blogid}/${this.props.match.params.postid}`
       )
       .then((response) => {
-        console.log(response.data);
         this.setState({
           commentsData: response.data,
         });
@@ -75,11 +74,6 @@ class SinglePage extends Component {
       });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    this.deleteComment();
-  };
 
   render() {
     let deleteModalClose = () => this.setState({ deleteModalShow: false });
@@ -89,7 +83,7 @@ class SinglePage extends Component {
         <div className="singlepage">
           <div className="singlepage__wrapper">
             <Link to={`/blog/${this.state.postsData.blog_id}`}>
-              <i class="singlepage__icon1 fas fa-long-arrow-alt-left fa-2x">
+              <i className="singlepage__icon1 fas fa-long-arrow-alt-left fa-2x">
                 go back
               </i>
             </Link>
@@ -113,12 +107,14 @@ class SinglePage extends Component {
                     this.setState({ deleteModalShow: true });
                   }}
                 >
-                  <DeleteModal
-                    show={this.state.deleteModalShow}
-                    postsData={this.state.postsData}
-                    deletePost={this.deletePost}
-                    onHide={deleteModalClose}
-                  />
+                {this.state.postsData &&(
+                   <DeleteModal
+                   show={this.state.deleteModalShow}
+                   postsData={this.state.postsData}
+                   deletePost={this.deletePost}
+                   onHide={deleteModalClose}
+                 />
+                )}
                 </i>
               </div>
             </h1>
@@ -136,7 +132,8 @@ class SinglePage extends Component {
           <Sidebar/>
         </div>
         <div className="singlepage__commentsection">
-          <CommentsForm
+          
+            <CommentsForm
             addNewComment={this.addNewComment}
             commentData={this.commentsData}
             commentsData={this.state.commentsData}

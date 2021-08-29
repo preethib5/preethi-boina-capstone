@@ -1,6 +1,5 @@
 import React from "react";
-import "../SideBar/Sidebar.scss";
-import {Link } from "react-router-dom";
+import "../SideBar/Sidebar.scss";;
 
 export default function Sidebar() {
   return (

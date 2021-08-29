@@ -35,13 +35,13 @@ class AddPost extends Component {
       author: e.target.author.value,
     };
     this.addPost(newPost);
+    this.props.history.goBack();
     this.setState({
       redirect: true,
     });
   };
 
   render() {
-    console.log(this.props)
     if (this.state.redirect) {
        return <Redirect from="/addpost" to={`/blog/${this.props.match.params.id}`} />;
     }
@@ -104,7 +104,7 @@ class AddPost extends Component {
               ></textarea>
             </div>
 
-            <button className="addpost__submit">Publish</button>
+            <button className="addpost__submit" onClick={() => window.location.reload(false)}>Publish</button>
           </form>
         </div>
       </>

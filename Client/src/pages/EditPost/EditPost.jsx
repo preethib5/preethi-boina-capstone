@@ -64,7 +64,7 @@ class EditPost extends Component {
         <Topbar />
         <div className="editpost">
        <div className="editpost__flex">
-       <Link to={`/post/${this.state.postsData.blog_id}/${this.state.postsData.id}`} ><i class="editpost__icon1 fas fa-long-arrow-alt-left fa-4x"> go back</i></Link>
+       <Link to={`/post/${this.state.postsData.blog_id}/${this.state.postsData.id}`} ><i className="editpost__icon1 fas fa-long-arrow-alt-left fa-4x"> go back</i></Link>
           <h1 className="editpost__title">Edit Post</h1>
        </div>
           <img

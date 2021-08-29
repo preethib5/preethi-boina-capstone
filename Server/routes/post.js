@@ -113,10 +113,6 @@ router.delete("/:blogid/:postid", (req, res) => {
     })
     .destroy()
     .then((deletepost) => {
-      console.log(deletepost);
-      // postModel.fetchAll().then((posts) => {
-      //   res.status(200).json(posts);
-      // });
       res.status(200).json({ deletepost });
     })
     .catch((error) => res.status(500).json({ error: error.message }));

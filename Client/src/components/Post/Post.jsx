@@ -27,21 +27,6 @@ class Post extends Component {
       .catch((err) => {
         console.log(err);
       });
-
-
-      // axios
-      // .get(`http://localhost:8080/post/${this.state.postId}`)
-      // .then((res) => {
-      //   console.log(res.data);
-      //   this.setState({
-      //     postDetails: res.data,
-      //   });
-      // })
-      // .catch((err) => {
-      //   console.log(err);
-      // });
-
-
   };
   componentDidMount() {
     this.GetPosts();
@@ -52,7 +37,7 @@ class Post extends Component {
       <>
         <Header/>
         <h1></h1>
-        <Link to={`/addpost/${this.props.match.params.id}`} ><i class="icon far fa-plus-square fa-2x"> Add Post</i></Link>
+        <Link to={`/addpost/${this.props.match.params.id}`} ><i className="icon far fa-plus-square fa-2x"> Add Post</i></Link>
      <div className="singlepost">     
      { this.state.postDetails &&
       this.state.postDetails.map((post)=>(
@@ -65,8 +50,7 @@ class Post extends Component {
           />
           <div className="post__info">
             <div className="post__cats">
-              <span className="post__cat">Travel</span>
-              <span className="post__cat">Life</span>
+              <span className="post__cat">Adventure</span>
             </div>
             <span className="post__title">{post.title}</span>
             <span className="post__date">

@@ -11,7 +11,6 @@ class CommentsForm extends Component {
     this.props.addNewComment(newComment);
   };
   render() {
-    console.log(this.props)
     return (
       <>
         <h4 className="comments">

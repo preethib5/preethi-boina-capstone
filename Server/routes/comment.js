@@ -60,7 +60,6 @@ router.post("/:blogid/:postid", (req, res) => {
   })
     .save(null, { method: "insert" })
     .then((newComment) => {
-      console.log(newComment);
       res.status(201).json(newComment);
     })
     .catch((error) => res.status(400).json({ error: error.message }));
@@ -75,10 +74,6 @@ router.delete("/:blogid/:postid/:commentid", (req, res) => {
     })
     .destroy()
     .then((deletepost) => {
-      console.log(deletepost);
-      // postModel.fetchAll().then((posts) => {
-      //   res.status(200).json(posts);
-      // });
       res.status(200).json({ deletepost });
     })
     .catch((error) => res.status(500).json({ error: error.message }));

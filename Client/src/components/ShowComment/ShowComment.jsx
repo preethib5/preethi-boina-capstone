@@ -4,16 +4,6 @@ import "./ShowComment.scss";
 
 class ShowComment extends Component {
 
-  deleteComment = (blogid, postid, commentid) => {
-    axios
-      .delete(`http://localhost:8080/comment/${blogid}/${postid}/${commentid}`)
-      .then((res) => {
-        this.props.history.replace(`/post/${blogid}/${postid}`);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   handleChange = (event) => {
     this.setState({
@@ -30,15 +20,33 @@ class ShowComment extends Component {
         updateLikes
       )
       .then((response) => {
-        console.log(response.data);
         this.setState({
           likes: response.data.updatedLike.likes + 1,
-        });
+          
+        })
+        this.props.commentData()
+        
       })
       .catch((err) => {
         console.log(err);
       });
   };
+  deleteComment = (blogid, postid, commentid) => {
+    axios
+      .delete(`http://localhost:8080/comment/${blogid}/${postid}/${commentid}`)
+      .then((res) => {
+        this.props.commentData()
+        this.props.history.push(`/post/${blogid}/${postid}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   this.deleteComment();
+  // };
 
   render() {
     return (
@@ -68,7 +76,7 @@ class ShowComment extends Component {
                 </div>
                 <div className="container__links">
                   <i
-                    class="container__icon far fa-thumbs-up fa-2x"
+                    className="container__icon far fa-thumbs-up fa-2x"
                     name="likes"
                     id="likes"
                     onChange={this.handleChange}
