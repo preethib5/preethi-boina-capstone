@@ -51,12 +51,10 @@ class Post extends Component {
     return (
       <>
         <Header/>
-        <Link to={`/addpost/${this.props.match.params.id}`} ><i class="icon far fa-plus-square"> Add Post</i></Link>
-     <div className="singlepost">
-
-     
+        <h1></h1>
+        <Link to={`/addpost/${this.props.match.params.id}`} ><i class="icon far fa-plus-square fa-2x"> Add Post</i></Link>
+     <div className="singlepost">     
      { this.state.postDetails &&
-      
       this.state.postDetails.map((post)=>(
         <div className="post">
         <Link to={`/post/${post.blog_id}/${post.id}`} className="post__link">

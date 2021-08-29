@@ -12,7 +12,7 @@
   &__updateTitle {
     font-size: 30px;
     margin-bottom: 20px;
-    color: lightcoral;
+    color: rgb(75, 66, 66);
   }
   &__deleteTitle {
     color: red;
@@ -56,9 +56,10 @@
   }
 
   &__form > input {
-      color: gray;
+      color: rgb(39, 37, 37);
       margin: 10px 0;
       height: 30px;
+      font-weight: 800;
   }
 
   &__submit{

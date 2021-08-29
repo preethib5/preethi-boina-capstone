@@ -23,7 +23,7 @@ module.exports = [
   {
     id: 4,
     description: "Experience Football on Top of the Himilayan Mountains",
-    name: "Adventure",
+    name: "Mystrey",
     image:"http://localhost:3000/static/media/img-4.a31875b7.jpg",
     user_id: 2,
   },

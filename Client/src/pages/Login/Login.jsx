@@ -84,10 +84,10 @@ class Login extends Component {
 
               <div className="formset__buttons">
               <button  className="formset__buttons--btn1" type="submit">
-                Log In
+                LogIn
               </button>
               <button  className="formset__buttons--btn2" type="button" onClick={this.showSignUp}>
-                Sign up
+                SignUp
               </button>
             </div>
             </fieldset>

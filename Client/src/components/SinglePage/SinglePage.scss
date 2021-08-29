@@ -1,12 +1,32 @@
 .singlepage {
-  // display: flex;
+  display: flex;
   // justify-content: center;
   width: 50vw;
   margin-left: 25rem;
   height: 50vw;
+  @media screen and (min-width: 768px) {
+    width: 90vw;
+    height: 100vw;
+    margin-left: 5rem;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 70vw;
+    height: 100vw;
+    margin-left: 5rem;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 70vw;
+    height: 100vw;
+    margin-left: 5rem;
+  }
   &__wrapper {
     padding: 20px;
     padding-right: 0;
+    @media screen and (min-width: 1440px) {
+      padding: 5rem;
+     // padding: 20px;
+      //padding-right: 0;
+    }
   }
   &__img {
     width: 100%;
@@ -19,6 +39,10 @@
     margin: 10px;
     font-family: "Loras", serif;
     font-size: 28px;
+    font-weight: 600;
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+    }
   }
   &__edit {
     float: right;
@@ -54,18 +78,33 @@
   }
   &__author {
     font-weight: 800;
+    font-size: 25px;
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+    }
+    @media screen and (min-width: 768px) {
+      font-size: 25px;
+    }
   }
 
   &__desc {
-    color: #666;
+    color: rgb(92, 88, 88);
     font-size: 18px;
     line-height: 25px;
+    font-weight: 800;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+    @media screen and (min-width: 1024px) {
+      font-size: 24px;
+    }
   }
 
   &__desc::first-letter {
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
+    color: black;
   }
 
   &__link {
@@ -76,4 +115,16 @@
     margin-left: 10px;
     cursor: pointer;
   }
+  &__commentsection{
+    @media screen and (min-width: 768px) {
+      margin-top: -5rem;
+    }
+    @media screen and (min-width: 1024px) {
+      margin-top: -20rem;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-top: -55rem;
+    }
+  }
+ 
 }

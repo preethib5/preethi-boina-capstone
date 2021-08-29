@@ -2,6 +2,9 @@
 .singlepost{
   display: flex;
   margin: 2rem 0rem;
+  // @media screen and (min-width: 768px){
+  //   width: 209vw;
+  // }
   
 }
 .icon{
@@ -12,6 +15,9 @@
   margin-left: 35rem;
   margin-top: 2rem;
   font-weight: 800;
+  // @media screen and (min-width: 768px){
+  //   margin-left: 65rem;
+  // }
 }
 .post {
   width: 80vw;
@@ -34,7 +40,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+     
   }
+
   &__cat{
       font-family: sans-serif,'Varela Round';
       font-size: 11px;

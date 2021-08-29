@@ -3,7 +3,8 @@ import "../Settings/Settings.scss";
 import Topbar from "../../components/TopBar/Topbar";
 import Sidebar from "../../components/SideBar/Sidebar";
 import axios from "axios";
-import AccountModal from "../../components/DeleteModal/AccountModal";
+import AccountModal from "../../components/Modalpopups/AccountModal";
+
 
 class Settings extends Component {
   state = {
@@ -115,7 +116,7 @@ class Settings extends Component {
               </span>
             </div>
             <form className="settings__form">
-              <label htmlFor="profilepic">Profile Picture</label>
+              {/* <label htmlFor="profilepic">Profile Picture</label>
               <div className="settings__profilepic">
                 <img
                   className="settings__img"
@@ -126,9 +127,9 @@ class Settings extends Component {
                   <i className="settings__icon far fa-user-circle"></i>
                 </label>
                 <input type="file" id="fileinput" style={{ display: "none" }} />
-              </div>
-              <label>First Name</label>
-              <input
+              </div> */}
+              <label className="settings__form--label">First Name</label>
+              <input className="settings__form--input"
                 type="text"
                 name="firstName"
                 id="firstName"
@@ -136,8 +137,8 @@ class Settings extends Component {
                 onChange={this.handleChange}
                 placeholder="First Name"
               />
-              <label>Last Name</label>
-              <input
+              <label className="settings__form--label">Last Name</label>
+              <input className="settings__form--input"
                 type="text"
                 name="lastName"
                 id="lastName"
@@ -145,8 +146,8 @@ class Settings extends Component {
                 onChange={this.handleChange}
                 placeholder="Last Name"
               />
-              <label>Email</label>
-              <input
+              <label className="settings__form--label">Email</label>
+              <input className="settings__form--input"
                 type="email"
                 name="email"
                 id="email"
@@ -154,8 +155,8 @@ class Settings extends Component {
                 onChange={this.handleChange}
                 placeholder="email@gmail.com"
               />
-              <label>Password</label>
-              <input
+              <label className="settings__form--label">Password</label>
+              <input className="settings__form--input"
                 type="password"
                 name="password"
                 id="password"

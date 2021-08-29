@@ -15,13 +15,38 @@
       position: fixed;
       z-index: -1;
    }
+   // &__title{
+   //    @media screen and (min-width: 768px){
+   //       margin-right: 3.5rem !important;
+   //       margin-top: 5rem !important;
+   //       font-size: 45px !important;
+   //   }
+   // }
 &__buttons{
    margin:6px;
    margin-right: 60rem;
+   @media screen and (min-width: 768px){
+      margin-right:20.5rem;
+    
+  }
+  @media screen and (min-width: 1024px){
+   margin-right:40.5rem;
+}
+@media screen and (min-width: 1440px){
+   margin-right:60.5rem;
+}
 }
    &__btn{
       margin-top: 32px;
       margin-right: 0rem;
+      background-color: teal !important;
+      border-radius: .5rem;
+      width: 14rem;
+      font-size: 25px;
+      @media screen and (min-width: 768px){
+         width: 10rem;
+       
+     }
    }
 
 }
@@ -32,6 +57,22 @@
    margin-top: -100px;
    margin-right: 55rem;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   @media screen and (min-width: 768px){
+      margin-right: 20.5rem ;
+      margin-top: -2rem ;
+      font-size: 45px ;
+  }
+  @media screen and (min-width: 1024px){
+    margin-right: 40.5rem ;
+   margin-top: -2rem ;
+   font-size: 45px ;
+}
+@media screen and (min-width: 1440px){
+   margin-right: 60.5rem ;
+  margin-top: -2rem ;
+  font-size: 65px ;
+}
+
 }
 
 .herosection> p{
@@ -40,6 +81,23 @@
    margin-top: 8px;
    margin-right: 55rem;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   @media screen and (min-width: 768px){
+      margin-right:20.5rem;
+      margin-top: 2rem ;
+      font-size: 15px ;
+  }
+  @media screen and (min-width: 1024px){
+   margin-right:40.5rem;
+      margin-top: .5rem ;
+      font-size: 15px ;
+}
+@media screen and (min-width: 1440px){
+   margin-right:60rem;
+   margin-top: .5rem ;
+   font-size: 20px ;
+}
+
+
 }
 
 .fa-play-circle{

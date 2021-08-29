@@ -68,7 +68,7 @@ class ShowComment extends Component {
                 </div>
                 <div className="container__links">
                   <i
-                    class="container__icon far fa-thumbs-up"
+                    class="container__icon far fa-thumbs-up fa-2x"
                     name="likes"
                     id="likes"
                     onChange={this.handleChange}
@@ -79,7 +79,7 @@ class ShowComment extends Component {
                     {comment.likes}
                   </i>
                   <i
-                    className="container__icons far fa-trash-alt"
+                    className="container__icons far fa-trash-alt fa-2x"
                     onClick={() =>
                       this.deleteComment(
                         comment.blog_id,

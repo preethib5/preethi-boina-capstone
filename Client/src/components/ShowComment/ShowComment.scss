@@ -1,11 +1,20 @@
 .container {
-    margin-top: -3rem;
+    margin-top: -4rem;
     &__commentBox {
         padding: 1%;
         border-top: 1px solid #AFAFAF;
         @media only screen and (min-width: 1024px) {
             width: 60vw;
         }
+        @media only screen and (min-width: 768px) {
+            width: 90vw;
+            margin: 0 3rem;
+        }
+        @media only screen and (min-width: 1440px) {
+            width: 90vw;
+          //  margin: 0 3rem;
+            margin-left: -5rem;
+          }
     }
     &__leftPanelImg {
         float: left;
@@ -25,6 +34,15 @@
             margin: 1rem;
             font-weight: 600;
             white-space: nowrap;
+            @media only screen and (min-width: 768px) {
+                font-size: 30px;
+            }
+            @media only screen and (min-width: 1024px) {
+                font-size: 32px;
+            }
+            @media only screen and (min-width: 1440px) {
+                font-size: 32px;
+              }
         }
         &--date {
             white-space: nowrap;
@@ -33,6 +51,15 @@
     &__comment {
         padding: 3%;
         display: flex;
+        @media only screen and (min-width: 768px) {
+            font-size: 30px;
+        }
+        @media only screen and (min-width: 1024px) {
+            font-size: 32px;
+        }
+        @media only screen and (min-width: 1440px) {
+            font-size: 32px;
+          }
     }
     &__button {
         display: flex;
@@ -48,6 +75,9 @@
             @media only screen and (min-width: 1024px) {
                 padding-left: 4rem;
             }
+            @media only screen and (min-width: 1440px) {
+                padding-left: 4rem;
+              }
         }
     }
     &__like {
@@ -70,5 +100,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media only screen and (min-width: 1440px) {
+            justify-content: space-around;
+            margin-left: -20rem;
+          }
     }
 }

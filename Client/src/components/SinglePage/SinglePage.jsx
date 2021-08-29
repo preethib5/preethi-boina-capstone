@@ -6,7 +6,7 @@ import Sidebar from "../../components/SideBar/Sidebar";
 import axios from "axios";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import ShowComment from "../ShowComment//ShowComment";
-import DeleteModal from "../DeleteModal/PostDeleteModal";
+import DeleteModal from "../Modalpopups/PostDeleteModal";
 class SinglePage extends Component {
   state = {
     postsData: [],
@@ -45,9 +45,6 @@ class SinglePage extends Component {
   }
 
   deletePost = (blogid, postid) => {
-    debugger
-    // e.preventDefault();
-    //const blogid = this.state.id;
     axios
       .delete(`http://localhost:8080/post/${blogid}/${postid}`)
       .then((res) => {
@@ -92,7 +89,7 @@ class SinglePage extends Component {
         <div className="singlepage">
           <div className="singlepage__wrapper">
             <Link to={`/blog/${this.state.postsData.blog_id}`}>
-              <i class="singlepage__icon1 fas fa-long-arrow-alt-left fa-4x">
+              <i class="singlepage__icon1 fas fa-long-arrow-alt-left fa-2x">
                 go back
               </i>
             </Link>
@@ -108,7 +105,7 @@ class SinglePage extends Component {
                   to={`/editpost/${this.state.postsData.blog_id}/${this.state.postsData.id}`}
                   className=" singlepage__link"
                 >
-                  <i className=" singlepage__icon far fa-edit"></i>
+                  <i className=" singlepage__icon far fa-edit fa-2x"></i>
                 </Link>
                 <i
                   className="singlepage__icons"
@@ -136,11 +133,13 @@ class SinglePage extends Component {
             </div>
             <p className="singlepage__desc">{this.state.postsData.content}</p>
           </div>
+          <Sidebar/>
         </div>
         <div className="singlepage__commentsection">
           <CommentsForm
-            commentData={this.state.commentData}
             addNewComment={this.addNewComment}
+            commentData={this.commentsData}
+            commentsData={this.state.commentsData}
           />
           {this.state.commentsData && (
             <ShowComment
@@ -149,7 +148,9 @@ class SinglePage extends Component {
               deleteComment={this.handleSubmit}
             />
           )}
+          
         </div>
+       
       </>
     );
   }

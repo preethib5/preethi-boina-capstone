@@ -8,6 +8,11 @@
   &__container {
     display: flex;
     flex-wrap: wrap;
+    @media screen and (min-width: 768px){
+
+      justify-content: center;
+      align-items: center;
+  }
   }
   &__wrapper {
       display: flex;
@@ -16,10 +21,20 @@
   }
   &__items {
     margin-bottom: 24px;
+    @media screen and (min-width: 768px){
+      width: 70vw;
+  }
     @media screen and (min-width: 1024px){
-        width: 30vw;
-        display: flex;
+      display: flex;
+        width: 70vw;
+       
     }
+    @media screen and (min-width: 1440px){
+      display: flex;
+        width: 30vw;
+       
+    }
+  
   }
   &__link{
     text-decoration: none;

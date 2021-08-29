@@ -11,8 +11,8 @@ export default function HeroSection() {
       <p className="herosection__desc">Share your story with the world.....</p>
      <div className="herosection__buttons">
     <Link to={`/login`} > <button className="herosection__btn">Get Started</button></Link>
-      <button className="herosection__btn">Watch Trailer
-      <i className="far fa-play-circle"/></button>
+      {/* <button className="herosection__btn">Watch Trailer
+      <i className="far fa-play-circle"/></button> */}
      </div>
     </div>
   )

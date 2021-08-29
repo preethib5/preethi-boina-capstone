@@ -1,7 +1,16 @@
 
 .body{
     // margin-top: 60px;
-  
+    width: 100rem !important;
+    @media screen and (min-width: 768px){
+        width: 60rem;
+    }
+    @media screen and (min-width: 1024px){
+        width: 70rem;
+    }
+    @media screen and (min-width: 1440px){
+        width: 85rem;
+      }
     &__title{
         display:flex ;
         flex-direction: column;
@@ -29,11 +38,23 @@
         margin-top: -60px;
         object-fit: cover;
     }
+    // &__slides{
+    //     width: 100%;
+    // }
 }
 
 #slider{
     overflow: hidden; 
-    margin-top: -35rem;
+   // margin-top: -35rem !important;
+    @media screen and (min-width: 768px){
+        margin-top: -14.5rem;
+    }
+    @media screen and (min-width: 1024px){
+        margin-top: -20rem;
+    }
+    @media screen and (min-width: 1440px){
+        margin-top: -27rem;
+      }
 
 }
 #slider figure{
@@ -43,7 +64,7 @@
     left: 0;
     text-align: left;
     font-size: 0;
-    animation: 10s slidy infinite;
+    animation: 5s slidy infinite;
     animation-iteration-count: 2;
 }
 
@@ -51,6 +72,7 @@
     width: 20%; 
 	float: left; 
 	height:100vh;
+
 }
 
 @keyframes slidy {
@@ -59,8 +81,8 @@
     25% { left: -100%; }
     45% { left: -100%; }
     50% { left: -200%; }
-    // 70% { left: -200%; }
-    // 75% { left: -300%; }
-    // 95% { left: -300%; }
-    // 100% { left: -400%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+     100% { left: -400%; }
     }
