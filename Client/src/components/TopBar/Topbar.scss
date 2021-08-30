@@ -1,5 +1,5 @@
 .header {
-    width: 100%;
+    width: 99rem !important;
     height: 50px;
     background-color: #242424;
     position: sticky;
@@ -8,6 +8,15 @@
     align-items: center;
     font-family: "Josefin Sans", sans-serif;
     z-index: 999;
+    @media screen and (min-width: 768px){
+      width: 60rem;
+  }
+  @media screen and (min-width: 1024px){
+    width: 70rem;
+}
+@media screen and (min-width: 1440px){
+  width: 85rem;
+}
     &__left,
     &__right {
       flex: 3;

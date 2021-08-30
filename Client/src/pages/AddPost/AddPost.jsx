@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../AddPost/AddPost.scss";
 import Topbar from "../../components/TopBar/Topbar";
 import axios from "axios";
-import {Redirect} from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 class AddPost extends Component {
   state = {
@@ -11,10 +11,11 @@ class AddPost extends Component {
   };
   addPost = (obj) => {
     axios
-      .post(`http://localhost:8080/post/1`, {
+      .post(`http://localhost:8080/post/${this.props.match.params.id}`, {
         title: obj.title,
         content: obj.content,
-        image:obj.image
+        image: obj.image,
+        author: obj.author,
       })
       .then((res) => {
         this.setState({
@@ -31,54 +32,83 @@ class AddPost extends Component {
       title: e.target.title.value,
       content: e.target.content.value,
       image: e.target.image.value,
+      author: e.target.author.value,
     };
-    console.log(newPost);
     this.addPost(newPost);
+    this.props.history.goBack();
     this.setState({
       redirect: true,
     });
   };
 
-  render (){
+  render() {
     if (this.state.redirect) {
-      return <Redirect from="/addpost" to="/blog" />;
+       return <Redirect from="/addpost" to={`/blog/${this.props.match.params.id}`} />;
     }
     return (
-      
       <>
         <Topbar />
         <div className="addpost">
           <h1 className="addpost__title">Add Post</h1>
-         
+
           <form className="addpost__form" onSubmit={this.handleSubmit}>
-          {/* <img className="addpost__img" name="image" id="image"  src="" alt="add-img"/> */}
-          <div className="addpost__formGroup">              
-                <label htmlFor="fileInput">
-                <i className="addpost__icon fas fa-plus"></i>
-                </label>
-              <input type="file" id="fileInput" style={{display:"none"}}/>
-              <input className="addpost__input" type="text" placeholder="image" name="image" id="image" autoFocus={true}/>
-            </div>
-  
-            <div className="addpost__formGroup">              
-                <label htmlFor="fileInput">
-                <i className="addpost__icon fas fa-plus"></i>
-                </label>
-              <input type="file" id="fileInput" style={{display:"none"}}/>
-              <input className="addpost__input" type="text" placeholder="title" name="title" id="title" autoFocus={true}/>
-            </div>
-  
             <div className="addpost__formGroup">
-                <textarea name="content" id="content" className="addpost__input1" type="text" placeholder="Tell your story...."></textarea>
+              <label htmlFor="fileInput">
+                <i className="addpost__icon fas fa-plus"></i>
+              </label>
+              <input type="file" id="fileInput" style={{ display: "none" }} />
+              <input
+                className="addpost__input"
+                type="text"
+                placeholder="Image"
+                name="image"
+                id="mage"
+                autoFocus={true}
+              />
             </div>
-  
-            <button  className="addpost__submit">Publish</button>
+
+            <div className="addpost__formGroup1">
+              <label htmlFor="fileInput">
+                <i className="addpost__icon fas fa-plus"></i>
+              </label>
+              <input type="file" id="fileInput" style={{ display: "none" }} />
+              <input
+                className="addpost__input"
+                type="text"
+                placeholder="Title of your Post"
+                name="title"
+                id="title"
+                autoFocus={true}
+              />
+            </div>
+
+            <div className="addpost__formGroup">
+              <input
+                name="author"
+                id="author"
+                className="addpost__input2"
+                type="text"
+                //defaultValue={this.state.author}
+               // onChange={this.handleChange}
+                placeholder="Name of the Author...."
+              />
+            </div>
+
+            <div className="addpost__formGroup">
+              <textarea
+                name="content"
+                id="content"
+                className="addpost__input1"
+                type="text"
+                placeholder="Tell your story...."
+              ></textarea>
+            </div>
+
+            <button className="addpost__submit" onClick={() => window.location.reload(false)}>Publish</button>
           </form>
-        
         </div>
       </>
     );
   }
- 
 }
 export default AddPost;

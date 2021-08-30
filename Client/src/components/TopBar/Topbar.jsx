@@ -3,6 +3,7 @@ import "../TopBar/Topbar.scss";
 import { Link } from "react-router-dom";
 
 export default function Topbar({ Logout }) {
+
   const user =true;
   return (
     <div className="header">
@@ -20,9 +21,9 @@ export default function Topbar({ Logout }) {
           </Link>
           <Link to={`/blog`} className="header__link"><li className="header__items">ABOUT</li></Link>
           <li className="header__items">CONTACT</li>
-          <Link to={`/addpost`} className="header__link">
+          {/* <Link to={`/addpost/${this.props.match.params.id}`} className="header__link">
             <li className="header__items">POST</li>
-          </Link>
+          </Link> */}
 
          {user &&  <Link to={`/`} className="header__link">
             <li className="header__items" onClick={Logout}>
@@ -36,7 +37,7 @@ export default function Topbar({ Logout }) {
         <img
           className="header__img"
           src="https://www.hdnicewallpapers.com/Walls/Big/Rainbow/Rainbow_on_Mountain_HD_Image.jpg"
-          alt="profile-image"
+          alt=""
         />
         </Link>):(
           <>

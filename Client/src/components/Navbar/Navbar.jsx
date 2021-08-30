@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Navbar/Navbar.scss";
 import {Link} from 'react-router-dom';
 import blog from "../../assets/images/blog-icon-26466837.jpg";

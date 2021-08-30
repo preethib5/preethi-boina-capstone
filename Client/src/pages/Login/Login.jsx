@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../Login/Login.scss";
-import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
@@ -23,7 +21,6 @@ class Login extends Component {
     axios
       .post(`http://localhost:8080/user/login`, this.state.formData)
       .then((res) => {
-        //console.log(res.data);
         sessionStorage.setItem("token", res.data.token);
         this.props.history.push("/blog");
       })
@@ -58,7 +55,6 @@ class Login extends Component {
                     type="email"
                     id="email"
                     name="email"
-                    // value={this.handleChange}
                     onChange={this.handleChange}
                     placeholder="Enter Email"
                     required
@@ -72,7 +68,6 @@ class Login extends Component {
                     className="formset__item--input"
                     type={this.state.passwordShown ? "text" : "password"}
                     name="password"
-                    // value={password}
                     onChange={this.handleChange}
                     placeholder="Enter Password"
                     required
@@ -85,10 +80,10 @@ class Login extends Component {
 
               <div className="formset__buttons">
               <button  className="formset__buttons--btn1" type="submit">
-                Log In
+                LogIn
               </button>
               <button  className="formset__buttons--btn2" type="button" onClick={this.showSignUp}>
-                Sign up
+                SignUp
               </button>
             </div>
             </fieldset>

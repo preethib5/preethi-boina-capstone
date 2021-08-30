@@ -1,4 +1,5 @@
 .blogs {
+  // width: 385px;
   padding: 4rem;
   background: #fff;
   &__text {
@@ -6,15 +7,12 @@
   }
   &__container {
     display: flex;
-    // flex-flow: column;
-    align-items: center;
-    max-width: 1120px;
-    width: 90%;
-    // margin: 0 auto;
+    flex-wrap: wrap;
+    @media screen and (min-width: 768px){
 
-    @media screen and (min-width: 1200px){
-        width: 84%;
-    }
+      justify-content: center;
+      align-items: center;
+  }
   }
   &__wrapper {
       display: flex;
@@ -23,10 +21,20 @@
   }
   &__items {
     margin-bottom: 24px;
+    @media screen and (min-width: 768px){
+      width: 70vw;
+  }
     @media screen and (min-width: 1024px){
-        width: 30vw;
-        display: flex;
+      display: flex;
+        width: 70vw;
+       
     }
+    @media screen and (min-width: 1440px){
+      display: flex;
+        width: 30vw;
+       
+    }
+  
   }
   &__link{
     text-decoration: none;

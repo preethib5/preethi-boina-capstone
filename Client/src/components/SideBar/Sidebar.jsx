@@ -1,5 +1,5 @@
 import React from "react";
-import "../SideBar/Sidebar.scss";
+import "../SideBar/Sidebar.scss";;
 
 export default function Sidebar() {
   return (
@@ -8,19 +8,18 @@ export default function Sidebar() {
         <span className="sidebar__title">ABOUT ME</span>
         <img className="sidebar__img" src="https://i.ytimg.com/vi/m5kR7TPAkSw/maxresdefault.jpg" alt="sidebar-img" />
         <p className="sidebar__para" >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod
-          mollitia, vero dolor blanditiis unde labore minus, aperiam voluptate
-          accusantium quia quibusdam
+         Hi EveryOne!!! Thanks for stopping by here!!.....
+         Get in Touch or FollowUs on Twitter, Facebook and Instagram.....
         </p>
       </div>
       <div className="sidebar__item">
         <span className="sidebar__title">CATEGORIES</span>
         <ul className="sidebar__list">
-          <li className="sidebar__items">LifeStyle</li>
-          <li className="sidebar__items">Music</li>
-          <li className="sidebar__items">Style</li>
-          <li className="sidebar__items">Sports</li>
-          <li className="sidebar__items">Tech</li>
+          <li className="sidebar__items">Adventure</li>
+          <li className="sidebar__items">Food&Recipes</li>
+          <li className="sidebar__items">HousesStyling</li>
+          <li className="sidebar__items">Mystrey</li>
+          <li className="sidebar__items">Fillmore</li>
         </ul>
       </div>
       <div className="sidebar__item">

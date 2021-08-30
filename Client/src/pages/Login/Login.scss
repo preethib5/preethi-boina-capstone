@@ -15,6 +15,7 @@
     background-size: 400% 400%;
     animation: Gradient 10s ease infinite;
     box-sizing: border-box;
+
     &__formset {
         grid-column: 2;
         grid-row: 2;
@@ -25,6 +26,9 @@
         background-color: rgba(255, 255, 255, 0.9);
         border-radius: 10px;
         box-shadow: 0 32px 64px rgba(0, 0, 0, 0.2);
+        &__buttons{
+            margin-right: -5rem !important;
+        }
         h2 {
             margin-bottom: 5px;
             text-align: center;
@@ -38,6 +42,7 @@
             border: none;
             border-radius: 5px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            
             // &__image {
             //     &--img {
             //         width: 50px;
@@ -80,6 +85,12 @@
                     &:hover {
                         border: 1px solid #aaf;
                     }
+                    @media screen and (min-width: 768px){
+                  
+                    //    height: calc(150vh - 50px);
+                      margin-left: -1rem !important;
+                      
+                    }
                 }
             }
      
@@ -107,20 +118,33 @@ fieldset {
         width: 50vh !important;
         font-size: 50px;
     }
+    @media screen and (min-width: 768px){
+        width: 80vw;
+    //    height: calc(150vh - 50px);
+       margin-left: -3rem;
+      
+    }
 }
 
 ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 5rem;
+   @media screen and (min-width: 1440px){
+    margin-top: -2rem !important;
+}
+
 }
 
 li {
     list-style: none;
+    margin-right: -.3rem;
+    @media screen and (min-width: 1440px){
+        margin-top: 2rem !important;
+    }
 }
 li:last-child{
-    margin-right: 1.5rem;
+    margin-right: 1rem;
 }
 .eye {
     position: relative;
@@ -146,7 +170,7 @@ label {
 
 button {
     margin-left: 4.5rem;
-    font-size: 18px;
+    font-size: 15px;
     border: black solid 1px;
     border-radius: 5px;
     font-weight: 600;
@@ -155,15 +179,16 @@ button {
     height: 50px;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 5px;
-    background: #a8c7a9;
+    background: teal;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    // position: relative;
-    // bottom: 1rem;
-    // right: 2.5rem;
-    //margin: 0 15rem;
     &:hover {
         background-color: rgb(115, 115, 121);
         border: 1px solid #aaf;
+    }
+    @media screen and (min-width: 768px){
+    margin-right: .5rem !important;
+    margin-top: 5rem !important;
+      
     }
 }
 
@@ -187,7 +212,24 @@ button {
         }
     }
 }
-
+@media only screen and (min-width: 768px) {
+    form {
+        h2 {
+            font-size:40px;
+        }
+        fieldset {
+            ul {
+                li {
+                    grid-template-columns: 100px 1fr;
+                    label {
+                        margin-top: -3rem;
+                        margin-left: -8rem;
+                    }
+                }
+            }
+        }
+    }
+}
 @keyframes Gradient {
     0% {
         background-position: 0% 50%

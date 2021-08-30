@@ -3,12 +3,12 @@ import "../Home/Home.scss"
 import axios from "axios";
 import Header from "../../components/Header/Header";
 import Sidebar from "../../components/SideBar/Sidebar";
-import Posts from "../../components/Posts/Posts";
+import Blogs from "../../components/Blogs/Blogs";
 
 class Home extends React.Component {
   state = {
     currentUser: null,
-    currentUserTasks: [],
+   
   };
 
   componentDidMount() {
@@ -21,10 +21,8 @@ class Home extends React.Component {
         },
       })
       .then((res) => {
-        console.log(res.data);
         this.setState({
           currentUser: res.data.currentUser,
-          currentUserTasks: res.data.tasks,
         });
       })
       .catch((err) => {
@@ -42,7 +40,7 @@ class Home extends React.Component {
       <>
         <Header Logout={this.logout} />
         <div className="home">
-          <Posts />
+          <Blogs />
           <Sidebar />
         </div>
       </>

@@ -3,12 +3,16 @@
   margin: 10px;
   padding-top: 10px;
   margin-right: 1rem;
-  background-color: rgb(223, 223, 215);
+  background-color: lightgrey;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  @media screen and (min-width: 768px) {
+    width: 100vw;
+    height: 200vw;
+    margin-left: 5rem;
+  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -68,5 +72,9 @@
     margin-left: 10px;
     color: #444;
     cursor: pointer;
+  }
+  &__Links{
+    color:black;
+    text-decoration: none;
   }
 }
