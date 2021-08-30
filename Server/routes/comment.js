@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
 
 router.get("/:blogid/:postid", (req, res) => {
   userModel
-    .where({ id: req.params.blogid })
-    .fetch()
+   // .where({ id: req.params.blogid })
+    .fetchAll()
     .then((user) => {
       blogModel
         .where({ id: req.params.blogid })
