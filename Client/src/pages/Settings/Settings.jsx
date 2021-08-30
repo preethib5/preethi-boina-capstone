@@ -50,7 +50,6 @@ class Settings extends Component {
   };
 
   handleSubmit = (event) => {
-    debugger;
     event.preventDefault();
     const updateUser = {
       //must match state properties

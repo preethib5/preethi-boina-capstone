@@ -14,7 +14,6 @@ class SignUp extends React.Component {
   };
 
   handleSubmit = (e) => {
-    debugger
     e.preventDefault();
     axios
       .post("http://localhost:8080/user/", this.state.formData)
