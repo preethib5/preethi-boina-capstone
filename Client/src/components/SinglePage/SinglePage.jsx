@@ -49,7 +49,7 @@ class SinglePage extends Component {
     axios
       .delete(`http://localhost:8080/post/${blogid}/${postid}`)
       .then((res) => {
-        this.props.history.goBack();
+        this.props.history.push(`/blog/${this.props.match.params.blogid}`);
       })
       .catch((error) => {
         console.log(error);
