@@ -6,7 +6,6 @@ import { Redirect } from "react-router-dom";
 
 class AddPost extends Component {
   state = {
-    redirect: false,
     posts: [],
   };
   addPost = (obj) => {
@@ -36,15 +35,11 @@ class AddPost extends Component {
     };
     this.addPost(newPost);
     this.props.history.goBack();
-    this.setState({
-      redirect: true,
-    });
+  
   };
 
   render() {
-    if (this.state.redirect) {
-       return <Redirect from="/addpost" to={`/blog/${this.props.match.params.id}`} />;
-    }
+
     return (
       <>
         <Topbar />
