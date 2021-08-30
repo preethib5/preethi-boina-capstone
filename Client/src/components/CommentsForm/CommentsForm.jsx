@@ -9,15 +9,18 @@ class CommentsForm extends Component {
       comment: e.target.comment.value,
     };
     this.props.addNewComment(newComment);
+    this.props.commentData()
+   // this.props.history.push(`/post/${blogid}/${postid}`);
   };
   render() {
+    console.log(this.props)
     return (
       <>
-        <h4 className="comments">
-          {/* {this.props.commentsData.comments.length}  */}
-          Comments
-        </h4>
+       
         <form className="comment-form" onSubmit={this.handleSubmit}>
+        <h4 className="comments">
+           {this.props.commentsData.comments.length} Comments
+         </h4>
           <div className="comment-form__section1">
             <img
               className="comment-form__image"

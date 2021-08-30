@@ -36,7 +36,6 @@ router.get("/:blogid/:postid", (req, res) => {
                 .fetchAll()
                 .then((comment) => {
                   res.json({
-                    //...comment.models[0].attributes,
                     posts: post,
                     blog: blog,
                     user: user,

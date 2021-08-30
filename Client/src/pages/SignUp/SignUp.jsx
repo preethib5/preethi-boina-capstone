@@ -20,7 +20,7 @@ class SignUp extends React.Component {
       .post("http://localhost:8080/user/", this.state.formData)
       .then((res) => {
         sessionStorage.setItem("token", res.data.token);
-        this.props.history.push("/");
+        this.props.history.push("/login");
       })
       .catch((error) => alert(error));
   };

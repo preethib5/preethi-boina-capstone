@@ -4,7 +4,7 @@ module.exports = [
       name: "Preethi Sree",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:2,
       blog_id:2
     },
@@ -13,7 +13,7 @@ module.exports = [
       name: "Preethi Boina",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:2,
       blog_id:2
     },
@@ -22,7 +22,7 @@ module.exports = [
       name: "Aarya",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:3,
       blog_id:1
 
@@ -32,7 +32,7 @@ module.exports = [
       name: "Cece",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:2,
       blog_id:3
 
@@ -42,7 +42,7 @@ module.exports = [
       name: "Roberto",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:6,
       blog_id:3
 
@@ -53,7 +53,7 @@ module.exports = [
       name: "Erine",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:8,
       blog_id:5
 
@@ -63,7 +63,7 @@ module.exports = [
       name: "Anvit",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:7,
       blog_id:4
 
@@ -73,7 +73,7 @@ module.exports = [
       name: "Priti",
       comment: "Book",
       likes: 1,
-      image:"https://www.patrioticretirementclub.com/wp-content/uploads/2021/08/hawaii-governor-02.jpg",
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:4,
       blog_id:1
 

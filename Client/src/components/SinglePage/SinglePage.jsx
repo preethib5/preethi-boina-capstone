@@ -7,10 +7,16 @@ import axios from "axios";
 import CommentsForm from "../CommentsForm/CommentsForm";
 import ShowComment from "../ShowComment//ShowComment";
 import DeleteModal from "../Modalpopups/PostDeleteModal";
+import ReactReadMoreReadLess from "react-read-more-read-less";
+
 class SinglePage extends Component {
   state = {
     postsData: [],
     deleteModalShow: false,
+    commantsPage: false,
+    showText: false,
+    numberOfLines: 5,
+    textLenth: null,
   };
 
   commentsData = () => {
@@ -74,8 +80,36 @@ class SinglePage extends Component {
       });
   };
 
+  hideComponent = () => {
+    const { commantsPage } = this.state;
+    this.setState({ commantsPage: !commantsPage });
+  };
+  // hideText = () => {
+  //   //const {showText} =this.state;
+  //   this.state.textLenth
+  //     ? this.setState({ numberOfLines: 0 })
+  //     : this.setState({ numberOfLines: 5 });
+  // };
+  // replaceStr=()=> {
+  //   const regex = /[.,\/#!$%\^&\*;:{}=\-_`~()]+$/gi;
+  //   const result = this.state.postsData.content.replace(regex, "");
+  //   this.setState({ result: result });
+  //  }
 
   render() {
+    // const regex = /(<([^>]+)>)/gi || '';
+    // const result = this.state.postsData.content.replace(regex, "");
+// let content = this.state.postsData.content ;
+// content= content.replace(... )
+const longText = "PUT ON YOUR DEERSTALKER CAP and get out your magnifying glass (or your smartphone, because it’s 2019), it’s mystery time! Part of what makes the world such a wondrous place are the unanswered questions associated with many artifacts and historic locations. Whether it’s a curious contraption from antiquity, or a grimly fascinating unsolved crime, the mysteries of the world keep us guessing, and many of them are tied places you can visit (even if they still refuse to give up their secrets). We recently asked Atlas Obscura readers in our Community forums to tell us about the mysteries that fascinate them, and they led us to some truly enigmatic places.Check out some of our favorite recommendations below, and if you have a mysterious place of your own that you just can’t stop thinking about, head over to our Forums and keep the conversation going. True mysteries might not have easy answers, but you don’t need to be a detective to be fascinated by where they took place.";
+    
+
+const {content}=this.state.postsData
+const regex = /(<([^>]+)>)/gi;
+    const result = longText.replace(regex,"");
+// console.log(result)
+
+
     let deleteModalClose = () => this.setState({ deleteModalShow: false });
     return (
       <>
@@ -107,47 +141,67 @@ class SinglePage extends Component {
                     this.setState({ deleteModalShow: true });
                   }}
                 >
-                {this.state.postsData &&(
-                   <DeleteModal
-                   show={this.state.deleteModalShow}
-                   postsData={this.state.postsData}
-                   deletePost={this.deletePost}
-                   onHide={deleteModalClose}
-                 />
-                )}
+                  {this.state.postsData && (
+                    <DeleteModal
+                      show={this.state.deleteModalShow}
+                      postsData={this.state.postsData}
+                      deletePost={this.deletePost}
+                      onHide={deleteModalClose}
+                    />
+                  )}
                 </i>
               </div>
             </h1>
 
             <div className="singlepage__info">
               <span className="singlepage__author">
-                Author: <b>{this.state.postsData.author}</b>
-              </span>
-              <span className="singlepage__date">
-                {this.state.postsData.postCreatedDate}
+                <b>{this.state.postsData.author}</b>
               </span>
             </div>
-            <p className="singlepage__desc">{this.state.postsData.content}</p>
+
+        <div>
+        <ReactReadMoreReadLess 
+              charLimit={200}
+              readMoreText={"Read more ▼"}
+              readLessText={"Read less ▲"}
+              readMoreClassName="read-more-less--more"
+              readLessClassName="read-more-less--less"
+              className="singlepage__desc"
+            >
+             {result}
+            </ReactReadMoreReadLess>
+        </div>
+            {/* <p className="singlepage__desc">{this.state.postsData.content}</p> */}
           </div>
-          <Sidebar/>
+          <Sidebar />
         </div>
-        <div className="singlepage__commentsection">
-          
-            <CommentsForm
-            addNewComment={this.addNewComment}
-            commentData={this.commentsData}
-            commentsData={this.state.commentsData}
-          />
-          {this.state.commentsData && (
-            <ShowComment
-              commentsData={this.state.commentsData}
-              commentData={this.commentsData}
-              deleteComment={this.handleSubmit}
-            />
-          )}
-          
-        </div>
-       
+        <button
+          className="singlepage__comment"
+          onClick={() => {
+            this.hideComponent(this.state.commentsData);
+          }}
+        >
+          ShowComments
+        </button>
+
+        {this.state.commantsPage && (
+          <>
+            <div className="singlepage__commentsection">
+              <CommentsForm
+                addNewComment={this.addNewComment}
+                commentData={this.commentsData}
+                commentsData={this.state.commentsData}
+              />
+              {this.state.commentsData && (
+                <ShowComment
+                  commentsData={this.state.commentsData}
+                  commentData={this.commentsData}
+                  deleteComment={this.handleSubmit}
+                />
+              )}
+            </div>
+          </>
+        )}
       </>
     );
   }

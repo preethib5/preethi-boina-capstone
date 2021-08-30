@@ -10,7 +10,7 @@ function AccountModal(props) {
   return (
     <>
       <i
-        className="singlepage__icons far fa-trash-alt fa-4x"
+        className="singlepage__icons far fa-trash-alt fa-2x"
         onClick={handleShow}
       ></i>
       <Modal show={show} onHide={handleClose} animation={false}>
