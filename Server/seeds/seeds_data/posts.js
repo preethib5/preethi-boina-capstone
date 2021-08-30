@@ -27,7 +27,7 @@ module.exports = [
     id: 4,
     title: "Adventure Travel Equipment",
     content: "Having the right travel equipment makes all the difference so we’ve tested the best gear to be sure you are fully prepared for your adventure trips.We’ve chosen our equipment for travelling based on price and durability to make sure you’ll have enough spending money for all those other fun activities. With the right gear you can fully enjoy your travel adventures, get around quickly, see as much as possible and have fun!",
-    image:"https://www.jacadatravel.com/wp-content/uploads/fly-images/197749/komodo-island-beach-1600x500-cc.jpg",
+    image:"http://1.bp.blogspot.com/-c1HIImqQ3mE/T8z_2Kju4VI/AAAAAAAABZY/Pl9BRIvn0b4/s1600/adventure-wallpaper4.jpg",
     author:"BY BRENDAN LEONARD SEMI-RAD",
     blog_id: 1,
   },
