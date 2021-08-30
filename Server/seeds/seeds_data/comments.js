@@ -76,7 +76,24 @@ module.exports = [
       image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
       post_id:4,
       blog_id:1
-
+    },
+    {
+      id: 9,
+      name: "Roberto",
+      comment: "Book",
+      likes: 1,
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
+      post_id:5,
+      blog_id:3
+    },
+    {
+      id:10,
+      name: "Roberto",
+      comment: "Book",
+      likes: 1,
+      image:"https://hougumlaw.com/wp-content/uploads/2016/05/light-website-backgrounds-light-color-background-images-light-color-background-images-for-website-1024x640.jpg",
+      post_id:6,
+      blog_id:3
     },
   ];
   
