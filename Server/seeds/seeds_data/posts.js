@@ -19,7 +19,7 @@ module.exports = [
     id: 3,
     title: "Make Your Adventure Sound Epic",
     content: "Chris and I bicycled across the San Rafael Swell, from north to south. It was a little under 60 miles, and we took a couple days to do it. It was more gravel-grinding than actual mountain biking, but I thought it was fun. I ran out of water a couple times on the second day before we found more, but Chris had enough and gave me some of his. My rear brake also completely fell off my bike near the end of the second day, but I was able to jimmy-rig it with some baling wire and it worked just fine for the last 25 miles. I think I would try to find a different route next time, and take more water for the middle segment. It was a really pretty ride.",
-    image:"https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2018/04/18/3defc76b-795c-4cfa-a005-c2fabd43f6fb/adventure-travel-cliff",
+    image:"https://tse3.mm.bing.net/th?id=OIP.tIzr2UDYQAnOhjAAsmDbdgHaEi&pid=Api&P=0&w=292&h=180",
     author:"BY BRENDAN LEONARD SEMI-RAD ",
     blog_id: 1,
   },

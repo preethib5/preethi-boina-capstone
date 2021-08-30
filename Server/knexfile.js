@@ -9,6 +9,7 @@ module.exports = {
       password: 'preethi23508B@',
       database: 'connecting',
       charset: 'utf8',
+      timezone: 'UTC',
     }
   }
 };

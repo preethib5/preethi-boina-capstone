@@ -1,3 +1,4 @@
+
 const commentData = require("./seeds_data/comments")
 exports.seed = function(knex) {
   // Deletes ALL existing entries

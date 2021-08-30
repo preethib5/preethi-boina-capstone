@@ -5,6 +5,8 @@ const userModel = require("../models/user");
 const postModel = require("../models/post");
 const commentModel = require("../models/comment");
 
+const faker = require("faker");
+
 router.get("/", (req, res) => {
   commentModel.fetchAll().then((b) => {
     res.status(200).json(b);
@@ -53,6 +55,7 @@ router.post("/:blogid/:postid", (req, res) => {
     likes: 5,
     name: req.body.name,
     comment: req.body.comment,
+    image:faker.image.avatar(),
     id: Math.floor(Math.random() * 10000),
     post_id: req.params.postid,
     blog_id: req.params.blogid,

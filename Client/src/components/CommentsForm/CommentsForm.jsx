@@ -13,7 +13,6 @@ class CommentsForm extends Component {
    // this.props.history.push(`/post/${blogid}/${postid}`);
   };
   render() {
-    console.log(this.props)
     return (
       <>
        
