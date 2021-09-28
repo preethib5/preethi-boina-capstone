@@ -7,13 +7,13 @@
             width: 60vw;
         }
         @media only screen and (min-width: 768px) {
-            width: 90vw;
+            width: 70vw;
             margin: 0 3rem;
         }
         @media only screen and (min-width: 1440px) {
-            width: 90vw;
-          //  margin: 0 3rem;
+            width: 70vw;
             margin-left: -5rem;
+            margin-top: -8rem;
           }
     }
     &__leftPanelImg {
@@ -49,8 +49,10 @@
         }
     }
     &__comment {
-        padding: 3%;
+       // padding: 3%;
         display: flex;
+        margin-left: 4rem;
+
         @media only screen and (min-width: 768px) {
             font-size: 30px;
         }
@@ -88,6 +90,7 @@
         color: tomato;
      //   margin-left: -50rem;
         cursor: pointer;
+        margin-left: 2rem;
     }
    &__icon{
     color: teal;
@@ -95,14 +98,14 @@
     cursor: pointer;
    }
     &__links{
-        margin-top: -2rem;
-         margin-left: 5rem;
+     //  margin-top: -2rem;
+        margin-left: 5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         @media only screen and (min-width: 1440px) {
-            justify-content: space-around;
-            margin-left: -20rem;
+            justify-content: flex-start;
+          //  margin-left: -20rem;
           }
     }
 }

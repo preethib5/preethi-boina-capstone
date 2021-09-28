@@ -1,11 +1,12 @@
 .editpost {
   // padding-top: 50px;
   height: 50vw;
+  width: 70vw;
 
   &__flex{
     display: flex;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
   }
   &__title{
     font-size: 50px;
@@ -13,8 +14,8 @@ justify-content: center;
     margin-right: 20rem;
   }
   &__img {
-    margin-left: 190px;
-    width: 70vw;
+    margin-left: 20rem;
+    width: 50vw;
     height: 250px;
     border-radius: 10px;
     object-fit: cover;
@@ -45,7 +46,7 @@ justify-content: center;
    // margin-top: 10px;
     //padding-bottom: 35px;
     cursor: pointer;
-    margin-right: 20rem;
+    margin-left: 20rem;
     font-size: 20px;
     white-space: nowrap;
     color: black;
@@ -79,15 +80,12 @@ justify-content: center;
   }
 
   &__submit {
-    margin-top: 1rem;
-    position: absolute;
     font-size: 16px;
-    // bottom: 15rem;
-    right: 8rem;
-    color: white;
     background-color: teal;
-    padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+    margin-top: 2rem !important;
+    margin-right: -60rem !important;
+    width: 10vw;
   }
 }

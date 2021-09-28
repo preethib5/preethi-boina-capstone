@@ -88,7 +88,7 @@ class SinglePage extends Component {
         <Topbar />
         <div className="singlepage">
           <div className="singlepage__wrapper">
-            <Link to={`/blog/${this.state.postsData.blog_id}`}>
+            <Link to={`/blog/${this.state.postsData.blog_id}`} className="singlepage__link1">
               <i className="singlepage__icon1 fas fa-long-arrow-alt-left fa-2x">
                 go back
               </i>
@@ -127,15 +127,18 @@ class SinglePage extends Component {
 
             <div className="singlepage__info">
               <span className="singlepage__author">
-              <b>{this.state.postsData.author}</b>
+             Author: <b>{this.state.postsData.author}</b>
               </span>
               
             </div>
-          <p className="singlepage__desc" >{this.state.postsData.content}</p>
+        <div  className="singlepage__flex5" >
+        <p className="singlepage__desc" >{this.state.postsData.content}</p>
+          <button className="singlepage__comment" onClick={()=>{this.hideComponent(this.state.commentsData)}}>ShowComments</button>
+        </div>
           </div>
           <Sidebar />
         </div>
-        <button className="singlepage__comment" onClick={()=>{this.hideComponent(this.state.commentsData)}}>ShowComments</button>
+      
         
           
 

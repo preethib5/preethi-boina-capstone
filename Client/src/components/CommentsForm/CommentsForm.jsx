@@ -29,14 +29,13 @@ class CommentsForm extends Component {
             <h1 className="comment-form__header">JOIN THE CONVERSATION</h1>
           </div>
           <div className="comment-form__formGroup">
-            <label htmlFor="name">
+            <label className="comment-form__name" htmlFor="name">
             <input
               className="comment-form__input"
               type="text"
-              placeholder="Full Name "
+              placeholder="Full Name"
               name="name"
               id="name"
-              autoFocus={true}
             />   </label>
           </div>
 
@@ -49,7 +48,6 @@ class CommentsForm extends Component {
                 id="comment"
                 name="comment"
                 placeholder="Add a new comment"
-                autoFocus={false}
               ></textarea>
             </label>
             <button
